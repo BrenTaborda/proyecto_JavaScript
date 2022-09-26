@@ -361,9 +361,9 @@ function tomarDecision(bienvenida){
         let siNo = prompt("Querés que recomendemos un vino? Respondé SI/NO").toLowerCase();
         elegirSiNo(siNo);
     }
-/*     else{
+    else{
         alert("Nos vemos pronto");
-    } */
+    }
 }
 function iniciarRecomendacion(){
     let bienvenida = confirm("Bienvenido al Sommelier online");
