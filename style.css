@@ -8,14 +8,35 @@ body {
     background-color: rgb(206, 206, 213);
 }
 
+.header {
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    padding: 1rem 3rem;
+    }
+
+/* .main {
+margin-top: 10rem;
+margin-bottom: 5rem;
+} */
+
+
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    width: 350px;
-    height: 550px;
+    width: 250px;
+    height: 420px;
     float: left;
-    margin-left: 50%;
     transform: translateX(-50%);
-    margin-top: 2rem;
+    margin-left: 50%;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
     border: none;
     border-radius: 15px;
     display: flex;
@@ -25,27 +46,69 @@ body {
 }
 
 .card img {
-    width: 300px;
-    height: 300px;
+    width: 210px;
+    height: 210px;
     align-items: center;
     margin-left: 50%;
     transform: translateX(-50%);
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .card h1{
     font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
     color: rgb(19, 19, 43);
     margin-left: 1.5rem;
 }
 
 .card-text{
     font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
 }
 
 .btn {
     font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
     margin-left: 1.5rem;
 }
+
+
+.footer {
+    background-color: rgb(41, 64, 147);
+    opacity: 100%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    line-height: 19px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.footer__iconosRedesSociales {
+    display: flex;
+    width: 4rem;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-items: center; 
+    align-content: flex-end;
+    opacity: 1;
+    margin-right: 1rem;
+    
+}
+
+.footer__iconosRedesSociales :hover{
+    opacity: 0.7;
+    transition: opacity 1s ease-out;
+    }
