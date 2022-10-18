@@ -1,26 +1,19 @@
-const botonPrincipal =  document.querySelector("#botonInicio")
+let boton = document.getElementById("botonInicio") 
+let divPrincipal = document.getElementById("inicioApp");
 
-function tomarDecision(bienvenida){
-  if(bienvenida){
-      let siNo = prompt("Querés que recomendemos un vino? Respondé SI/NO").toLowerCase();
-      elegirSiNo(siNo);
-  }
-  else{
-      alert("Nos vemos pronto");
-  }
-}
-function iniciarRecomendacion(){
-  let bienvenida = confirm("Bienvenido al Sommelier online");
-  tomarDecision(bienvenida);
-}
-    botonPrincipal.onclick = tomarDecision;
+  boton.addEventListener ("click", () => {
+    divPrincipal.innerHTML = `<div id="mayoriaDeEdad"><h2>¿Sos mayor de edad?</h2><button id="botonMayorSi" class="botoninicio">SI</button><button id="botonMayorNo" class="botoninicio">NO</button></div>`
+  })
+
+//---------------------------------------------------------------------
+
+let botonNo = document.getElementById("botonMayorNo")
+let divPrincipalNo = document.getElementById("mayoriaDeEdad");
   
+  botonNo.addEventListener ("click", () => {
+    divPrincipalNo.innerHTML = `<h2>Todavía no podés beber alcohol</h2>`
+  }) 
 
-    // const decirLaEdad = document.getElementById("bienvenida")
-    // decirLaEdad.innerHTML = "<h2>Sos mayor de edad?</h2><button>SI</button><button>NO</button>"
-    
-    // botonPrincipal.onclick = decirLaEdad;
-    
 
 
 const todosLosVinos = [

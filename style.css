@@ -65,7 +65,13 @@ body {
 
 .bienvenida h1 {
     font-family: 'Open Sans', sans-serif;
-    font-size: 35px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.bienvenida h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
     text-align: center;
 }
 
