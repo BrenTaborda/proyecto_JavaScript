@@ -1,3 +1,28 @@
+const botonPrincipal =  document.querySelector("#botonInicio")
+
+function tomarDecision(bienvenida){
+  if(bienvenida){
+      let siNo = prompt("Querés que recomendemos un vino? Respondé SI/NO").toLowerCase();
+      elegirSiNo(siNo);
+  }
+  else{
+      alert("Nos vemos pronto");
+  }
+}
+function iniciarRecomendacion(){
+  let bienvenida = confirm("Bienvenido al Sommelier online");
+  tomarDecision(bienvenida);
+}
+    botonPrincipal.onclick = tomarDecision;
+  
+
+    // const decirLaEdad = document.getElementById("bienvenida")
+    // decirLaEdad.innerHTML = "<h2>Sos mayor de edad?</h2><button>SI</button><button>NO</button>"
+    
+    // botonPrincipal.onclick = decirLaEdad;
+    
+
+
 const todosLosVinos = [
   {
     vinoRecomendado: "Miguel Minni Sauvignon Blanc",
@@ -993,17 +1018,17 @@ function elegirSiNo(siNo){
         alert("Entonces disfrutá tu agüita");
     }
 }
-function tomarDecision(bienvenida){
-    if(bienvenida){
-        let siNo = prompt("Querés que recomendemos un vino? Respondé SI/NO").toLowerCase();
-        elegirSiNo(siNo);
-    }
-    else{
-        alert("Nos vemos pronto");
-    }
-}
-function iniciarRecomendacion(){
-    let bienvenida = confirm("Bienvenido al Sommelier online");
-    tomarDecision(bienvenida);
-}
-iniciarRecomendacion();
+// function tomarDecision(bienvenida){
+//     if(bienvenida){
+//         let siNo = prompt("Querés que recomendemos un vino? Respondé SI/NO").toLowerCase();
+//         elegirSiNo(siNo);
+//     }
+//     else{
+//         alert("Nos vemos pronto");
+//     }
+// }
+// function iniciarRecomendacion(){
+//     let bienvenida = confirm("Bienvenido al Sommelier online");
+//     tomarDecision(bienvenida);
+// }
+// iniciarRecomendacion();
