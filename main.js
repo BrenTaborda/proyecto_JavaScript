@@ -1,21 +1,3 @@
-let boton = document.querySelector('#botonInicio') 
-let divPrincipal = document.querySelector('#inicioApp');
-
-  boton.addEventListener ("click", () => {
-    divPrincipal.innerHTML = `<div id="mayoriaDeEdad" class="basic">
-    <h2>¿Sos mayor de edad?</h2>
-    <button id="botonMayorSi" class="botoninicio">SI</button>
-    <button id="botonMayorNo" class="botoninicio">NO</button></div>`
-  })
-
-let botonNo = document.querySelector('#botonMayorNo')  
-let divPrincipalNo = document.querySelector('#inicioApp');
-  botonNo.addEventListener("click", () => {
-    console.log("funciona")
-    divPrincipalNo.innerHTML = `<h2>Todavía no podés beber alcohol</h2>`
-  }) 
-
-
 const todosLosVinos = [
   {
     vinoRecomendado: "Miguel Minni Sauvignon Blanc",
@@ -505,6 +487,119 @@ const todosLosVinos = [
     },
 ];
 
+let boton = document.querySelector('#botonInicio') 
+let divPrincipal = document.querySelector('#inicioApp');
+
+boton.addEventListener ("click", () => {
+    divPrincipal.innerHTML = `<div id="mayoriaDeEdad" class="basic">
+    <h2>¿Sos mayor de edad?</h2>
+    <button id="botonMayorSi" class="botoninicio">SI</button>
+    <button id="botonMayorNo" class="botoninicio">NO</button></div>`
+
+let botonNo = document.querySelector('#botonMayorNo')  
+  botonNo.addEventListener("click", () => {
+    divPrincipal.innerHTML = `<h2>Todavía no podés beber alcohol</h2>`
+  }) ;
+
+  let botonSi = document.querySelector('#botonMayorSi')  
+  botonSi.addEventListener("click", () => {
+    divPrincipal.innerHTML = `<h2>Sommelier de Barrio te va a dar una recomendación personalizada. Elegí una ocasión:</h2>
+    <button id="botonCenaRomantica" class="botoninicio">Cena romántica</button>
+    <button id="botonJuntadaAmigos" class="botoninicio">Juntada con amigos</button>
+    <button id="botonParaRegalar" class="botoninicio">Para regalar</button></div>`
+  
+        let btnCenaRomantica = document.querySelector('#botonCenaRomantica')  
+        btnCenaRomantica.addEventListener("click", () => {
+        divPrincipal.innerHTML = `<h2>En esta ocasión preferís:</h2>
+        <button id="botonTintoCR" class="botoninicio">Tinto</button>
+        <button id="botonBlancoCR" class="botoninicio">Blanco</button>`
+
+          let btnTintoCR = document.querySelector('#botonTintoCR')  
+          btnTintoCR.addEventListener("click", () => {
+          divPrincipal.innerHTML = `<h2>Elegí un rango de precios:</h2>
+          <button id="botonRango1RomanceTinto" class="botoninicio">Hasta $1000</button>
+          <button id="botonRango2RomanceTinto" class="botoninicio">Entre $1000 y $2000</button>
+          <button id="botonRango3RomanceTinto" class="botoninicio">Más de $2000</button>`
+
+                    let btnTintoCRRango1 = document.querySelector('#botonRango1RomanceTinto')  
+                    btnTintoCRRango1.addEventListener("click", () => {
+                      const romanceTintoBajo = todosLosVinos.filter(function(el){
+                        return el.color === "tinto" &&
+                        el.ocasion === "romance" &&
+                        el.monto === "bajo";
+                      });
+                      const indiceMontoRomanceT1 = Math.floor(Math.random()*romanceTintoBajo.length)
+                  
+                    divPrincipal.innerHTML = `<div class="card">
+                    <img src=${romanceTintoBajo[indiceMontoRomanceT1].foto} alt=${romanceTintoBajo[indiceMontoRomanceT1].vinoRecomendado}">
+                    <h1>${romanceTintoBajo[indiceMontoRomanceT1].vinoRecomendado}</h1>
+                    <p class="card-text">${romanceTintoBajo[indiceMontoRomanceT1].frase}</p>
+                    <a href="${romanceTintoBajo[indiceMontoRomanceT1].linkCompra}" class="btn btn-primary">Comprar</a>
+                    </div>`
+                  
+                  
+                  }) ;
+                  let btnTintoCRRango2 = document.querySelector('#botonRango2RomanceTinto')  
+                  btnTintoCRRango2.addEventListener("click", () => {
+                    const regaloTintoMedio = todosLosVinos.filter(function(el){
+                      return el.color === "tinto" &&
+                      el.ocasion === "regalar" &&
+                      el.monto === "medio";
+                    });
+                    const indiceMontoRegaloT2 = Math.floor(Math.random()*regaloTintoMedio.length)
+                
+                  divPrincipal.innerHTML = `<div class="card">
+                  <img src=${regaloTintoMedio[indiceMontoRegaloT2].foto} alt=${regaloTintoMedio[indiceMontoRegaloT2].vinoRecomendado}">
+                  <h1>${regaloTintoMedio[indiceMontoRegaloT2].vinoRecomendado}</h1>
+                  <p class="card-text">${regaloTintoMedio[indiceMontoRegaloT2].frase}</p>
+                  <a href="${regaloTintoMedio[indiceMontoRegaloT2].linkCompra}" class="btn btn-primary">Comprar</a>
+                  </div>`
+                }) ;
+                let btnTintoCRRango3 = document.querySelector('#botonRango3RomanceTinto')  
+                btnTintoCRRango3.addEventListener("click", () => {
+                  const regaloTintoAlto = todosLosVinos.filter(function(el){
+                    return el.color === "tinto" &&
+                    el.ocasion === "regalar" &&
+                    el.monto === "alto";
+                  });
+                  const indiceMontoRegaloT3 = Math.floor(Math.random()*regaloTintoAlto.length)
+              
+                divPrincipal.innerHTML = `<div class="card">
+                <img src=${regaloTintoAlto[indiceMontoRegaloT3].foto} alt=${regaloTintoAlto[indiceMontoRegaloT3].vinoRecomendado}">
+                <h1>${regaloTintoAlto[indiceMontoRegaloT3].vinoRecomendado}</h1>
+                <p class="card-text">${regaloTintoAlto[indiceMontoRegaloT3].frase}</p>
+                <a href="${regaloTintoAlto[indiceMontoRegaloT3].linkCompra}" class="btn btn-primary">Comprar</a>
+                </div>`
+              }) ;
+
+                    
+
+          
+        
+        
+        
+        
+          }) ;
+        
+        
+
+
+
+
+          let btnBlancoCR = document.querySelector('#botonBlancoCR')  
+          btnBlancoCR.addEventListener("click", () => {
+          divPrincipal.innerHTML = `<h2>Elegí un rango de precios:</h2>
+          <button id="botonRango1RomanceBlanco" class="botoninicio">Hasta $1000</button>
+          <button id="botonRango2RomanceBlanco" class="botoninicio">Entre $1000 y $2000</button>
+          <button id="botonRango3RomanceBlanco" class="botoninicio">Más de $2000</button>`}) ;
+        
+        }) ;
+
+  }) ;
+
+});
+
+
 
 function montoRegaloBlanco(){
     let op = prompt(`Elegí un rango de precios:
@@ -979,38 +1074,38 @@ function seleccionarVariedadRomantica(){
                 alert("Ingresá una de las opciones seleccionadas. Volvé a empezar");
     }
 }
-function seleccionarOcasion(){
+// function seleccionarOcasion(){
 
-    let op = prompt(`Elegí una ocasión:
-    1: Cena romántica
-    2: Juntada con amigos
-    3: Para regalar.
+//     let op = prompt(`Elegí una ocasión:
+//     1: Cena romántica
+//     2: Juntada con amigos
+//     3: Para regalar.
 
-    Ingresá 1, 2 o 3.`);
-    switch (op) {
-        case "1":
-            let montoRomantico = Number;
-            seleccionarVariedadRomantica();
-            break;
-        case "2":
-            let montoAmigo = Number;
-            seleccionarVariedadAmigos();
-            break;
-        case "3":
-            let montoRegalo = Number;
-            seleccionarVariedadRegalo();
-            break;
-        default:
-            alert("Ingresá una de las opciones seleccionadas. Volvé a empezar");        }
-}
-function elegirSiNo(siNo){
-    if(siNo == "si"){
-        seleccionarOcasion();
-    }
-    else{
-        alert("Entonces disfrutá tu agüita");
-    }
-}
+//     Ingresá 1, 2 o 3.`);
+//     switch (op) {
+//         case "1":
+//             let montoRomantico = Number;
+//             seleccionarVariedadRomantica();
+//             break;
+//         case "2":
+//             let montoAmigo = Number;
+//             seleccionarVariedadAmigos();
+//             break;
+//         case "3":
+//             let montoRegalo = Number;
+//             seleccionarVariedadRegalo();
+//             break;
+//         default:
+//             alert("Ingresá una de las opciones seleccionadas. Volvé a empezar");        }
+// }
+// function elegirSiNo(siNo){
+//     if(siNo == "si"){
+//         seleccionarOcasion();
+//     }
+//     else{
+//         alert("Entonces disfrutá tu agüita");
+//     }
+// }
 // function tomarDecision(bienvenida){
 //     if(bienvenida){
 //         let siNo = prompt("Querés que recomendemos un vino? Respondé SI/NO").toLowerCase();
