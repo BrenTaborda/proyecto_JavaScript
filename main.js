@@ -572,12 +572,6 @@ let botonNo = document.querySelector('#botonMayorNo')
                 </div>`
               }) ;
 }) ;
-        
-        
-
-
-
-
           let btnBlancoCR = document.querySelector('#botonBlancoCR')  
           btnBlancoCR.addEventListener("click", () => {
           divPrincipal.innerHTML = `<h2>Elegí un rango de precios:</h2>
@@ -633,6 +627,133 @@ let botonNo = document.querySelector('#botonMayorNo')
         <h1>${romanceBlancoAlto[indiceMontoRomanceB3].vinoRecomendado}</h1>
         <p class="card-text">${romanceBlancoAlto[indiceMontoRomanceB3].frase}</p>
         <a href="${romanceBlancoAlto[indiceMontoRomanceB3].linkCompra}" class="btn btn-primary">Comprar</a>
+        </div>`
+        }) ;
+        
+        
+        }) ;
+        
+        }) ;
+
+        let btnJuntadaAmigos = document.querySelector('#botonJuntadaAmigos')  
+        btnJuntadaAmigos.addEventListener("click", () => {
+        divPrincipal.innerHTML = `<h2>En esta ocasión preferís:</h2>
+        <button id="botonTintoJA" class="botoninicio">Tinto</button>
+        <button id="botonBlancoJA" class="botoninicio">Blanco</button>`
+
+          let btnTintoJA = document.querySelector('#botonTintoJA')  
+          btnTintoJA.addEventListener("click", () => {
+          divPrincipal.innerHTML = `<h2>Elegí un rango de precios:</h2>
+          <button id="botonRango1JuntadaTinto" class="botoninicio">Hasta $1000</button>
+          <button id="botonRango2JuntadaTinto" class="botoninicio">Entre $1000 y $2000</button>
+          <button id="botonRango3JuntadaTinto" class="botoninicio">Más de $2000</button>`
+
+                    let btnTintoJARango1 = document.querySelector('#botonRango1JuntadaTinto')  
+                    btnTintoJARango1.addEventListener("click", () => {
+                      const juntadaTintoBajo = todosLosVinos.filter(function(el){
+                        return el.color === "tinto" &&
+                        el.ocasion === "juntada" &&
+                        el.monto === "bajo";
+                      });
+                      const indiceMontoJuntadaT1 = Math.floor(Math.random()*juntadaTintoBajo.length)
+                  
+                    divPrincipal.innerHTML = `<div class="card">
+                    <img src=${juntadaTintoBajo[indiceMontoJuntadaT1].foto} alt=${juntadaTintoBajo[indiceMontoJuntadaT1].vinoRecomendado}">
+                    <h1>${juntadaTintoBajo[indiceMontoJuntadaT1].vinoRecomendado}</h1>
+                    <p class="card-text">${juntadaTintoBajo[indiceMontoJuntadaT1].frase}</p>
+                    <a href="${juntadaTintoBajo[indiceMontoJuntadaT1].linkCompra}" class="btn btn-primary">Comprar</a>
+                    </div>`
+                  
+                  
+                  }) ;
+                  let btnTintoJARango2 = document.querySelector('#botonRango2JuntadaTinto')  
+                  btnTintoJARango2.addEventListener("click", () => {
+                    const juntadaTintoMedio = todosLosVinos.filter(function(el){
+                      return el.color === "tinto" &&
+                      el.ocasion === "juntada" &&
+                      el.monto === "medio";
+                    });
+                    const indiceMontoJuntadaT2 = Math.floor(Math.random()*juntadaTintoMedio.length)
+                
+                  divPrincipal.innerHTML = `<div class="card">
+                  <img src=${juntadaTintoMedio[indiceMontoJuntadaT2].foto} alt=${juntadaTintoMedio[indiceMontoJuntadaT2].vinoRecomendado}">
+                  <h1>${juntadaTintoMedio[indiceMontoJuntadaT2].vinoRecomendado}</h1>
+                  <p class="card-text">${juntadaTintoMedio[indiceMontoJuntadaT2].frase}</p>
+                  <a href="${juntadaTintoMedio[indiceMontoJuntadaT2].linkCompra}" class="btn btn-primary">Comprar</a>
+                  </div>`
+                }) ;
+                let btnTintoJARango3 = document.querySelector('#botonRango3JuntadaTinto')  
+                btnTintoJARango3.addEventListener("click", () => {
+                  const juntadaTintoAlto = todosLosVinos.filter(function(el){
+                    return el.color === "tinto" &&
+                    el.ocasion === "juntada" &&
+                    el.monto === "alto";
+                  });
+                  const indiceMontoJuntadaT3 = Math.floor(Math.random()*juntadaTintoAlto.length)
+              
+                divPrincipal.innerHTML = `<div class="card">
+                <img src=${juntadaTintoAlto[indiceMontoJuntadaT3].foto} alt=${juntadaTintoAlto[indiceMontoJuntadaT3].vinoRecomendado}">
+                <h1>${juntadaTintoAlto[indiceMontoJuntadaT3].vinoRecomendado}</h1>
+                <p class="card-text">${juntadaTintoAlto[indiceMontoJuntadaT3].frase}</p>
+                <a href="${juntadaTintoAlto[indiceMontoJuntadaT3].linkCompra}" class="btn btn-primary">Comprar</a>
+                </div>`
+              }) ;
+}) ;
+          let btnBlancoJA = document.querySelector('#botonBlancoJA')  
+          btnBlancoJA.addEventListener("click", () => {
+          divPrincipal.innerHTML = `<h2>Elegí un rango de precios:</h2>
+          <button id="botonRango1JuntadaBlanco" class="botoninicio">Hasta $1000</button>
+          <button id="botonRango2JuntadaBlanco" class="botoninicio">Entre $1000 y $2000</button>
+          <button id="botonRango3JuntadaBlanco" class="botoninicio">Más de $2000</button>`
+        
+          let btnBlancoJARango1 = document.querySelector('#botonRango1JuntadaBlanco')  
+          btnBlancoJARango1.addEventListener("click", () => {
+            const juntadaBlancoBajo = todosLosVinos.filter(function(el){
+              return el.color === "blanco" &&
+              el.ocasion === "juntada" &&
+              el.monto === "bajo";
+            });
+            const indiceMontoJuntadaB1 = Math.floor(Math.random()*juntadaBlancoBajo.length)
+        
+          divPrincipal.innerHTML = `<div class="card">
+          <img src=${juntadaBlancoBajo[indiceMontoJuntadaB1].foto} alt=${juntadaBlancoBajo[indiceMontoJuntadaB1].vinoRecomendado}">
+          <h1>${juntadaBlancoBajo[indiceMontoJuntadaB1].vinoRecomendado}</h1>
+          <p class="card-text">${juntadaBlancoBajo[indiceMontoJuntadaB1].frase}</p>
+          <a href="${juntadaBlancoBajo[indiceMontoJuntadaB1].linkCompra}" class="btn btn-primary">Comprar</a>
+          </div>`
+        }) ;
+        
+        let btnBlancoJARango2 = document.querySelector('#botonRango2JuntadaBlanco')  
+        btnBlancoJARango2.addEventListener("click", () => {
+          const juntadaBlancoMedio = todosLosVinos.filter(function(el){
+            return el.color === "blanco" &&
+            el.ocasion === "juntada" &&
+            el.monto === "medio";
+          });
+          const indiceMontoJuntadaB2 = Math.floor(Math.random()*juntadaBlancoMedio.length)
+      
+        divPrincipal.innerHTML = `<div class="card">
+        <img src=${juntadaBlancoMedio[indiceMontoJuntadaB2].foto} alt=${juntadaBlancoMedio[indiceMontoJuntadaB2].vinoRecomendado}">
+        <h1>${juntadaBlancoMedio[indiceMontoJuntadaB2].vinoRecomendado}</h1>
+        <p class="card-text">${juntadaBlancoMedio[indiceMontoJuntadaB2].frase}</p>
+        <a href="${juntadaBlancoMedio[indiceMontoJuntadaB2].linkCompra}" class="btn btn-primary">Comprar</a>
+        </div>`
+        }) ;
+
+        let btnBlancoJARango3 = document.querySelector('#botonRango3JuntadaBlanco')  
+        btnBlancoJARango3.addEventListener("click", () => {
+          const juntadaBlancoAlto = todosLosVinos.filter(function(el){
+            return el.color === "blanco" &&
+            el.ocasion === "juntada" &&
+            el.monto === "alto";
+          });
+          const indiceMontoJuntadaB3 = Math.floor(Math.random()*juntadaBlancoAlto.length)
+      
+        divPrincipal.innerHTML = `<div class="card">
+        <img src=${juntadaBlancoAlto[indiceMontoJuntadaB3].foto} alt=${juntadaBlancoAlto[indiceMontoJuntadaB3].vinoRecomendado}">
+        <h1>${juntadaBlancoAlto[indiceMontoJuntadaB3].vinoRecomendado}</h1>
+        <p class="card-text">${juntadaBlancoAlto[indiceMontoJuntadaB3].frase}</p>
+        <a href="${juntadaBlancoAlto[indiceMontoJuntadaB3].linkCompra}" class="btn btn-primary">Comprar</a>
         </div>`
         }) ;
         
@@ -803,160 +924,3 @@ function seleccionarVariedadRegalo(){
                 alert("Ingresá una de las opciones seleccionadas. Volvé a empezar");
     }
 }
-function montoAmigosBlanco(){
-
-    let op = prompt(`Elegí un rango de precios:
-    1: Entre $0 y $1000
-    2: Entre $1000 y $2000
-    3: Más de $2000.
-
-    Ingresá 1, 2 o 3.`);
-    switch (op) {
-        case "1":
-            let montoAmigosB1 = Number;
-            const juntadaBlancoBajo = todosLosVinos.filter(function(el){
-              return el.color === "blanco" &&
-              el.ocasion === "juntada" &&
-              el.monto === "bajo";
-            });
-            const indiceMontoJuntadaB1 = Math.floor(Math.random()*juntadaBlancoBajo.length)
-            
-            document.write(`<div class="card">
-            <img src=${juntadaBlancoBajo[indiceMontoJuntadaB1].foto} alt=${juntadaBlancoBajo[indiceMontoJuntadaB1].vinoRecomendado}">
-            <h1>${juntadaBlancoBajo[indiceMontoJuntadaB1].vinoRecomendado}</h1>
-            <p class="card-text">${juntadaBlancoBajo[indiceMontoJuntadaB1].frase}</p>
-            <a href="${juntadaBlancoBajo[indiceMontoJuntadaB1].linkCompra}" class="btn btn-primary">Comprar</a>
-            </div>`)
-
-            break;
-
-        case "2":
-            let montoAmigosB2 = Number;
-            const juntadaBlancoMedio = todosLosVinos.filter(function(el){
-              return el.color === "blanco" &&
-              el.ocasion === "juntada" &&
-              el.monto === "medio";
-            });
-            const indiceMontoJuntadaB2 = Math.floor(Math.random()*juntadaBlancoMedio.length)
-            
-            document.write(`<div class="card">
-            <img src=${juntadaBlancoMedio[indiceMontoJuntadaB2].foto} alt=${juntadaBlancoMedio[indiceMontoJuntadaB2].vinoRecomendado}">
-            <h1>${juntadaBlancoMedio[indiceMontoJuntadaB2].vinoRecomendado}</h1>
-            <p class="card-text">${juntadaBlancoMedio[indiceMontoJuntadaB2].frase}</p>
-            <a href="${juntadaBlancoMedio[indiceMontoJuntadaB2].linkCompra}" class="btn btn-primary">Comprar</a>
-            </div>`)
-            
-            break;
-
-        case "3":
-            let montoAmigosB3 = Number;
-
-            const juntadaBlancoAlto = todosLosVinos.filter(function(el){
-              return el.color === "blanco" &&
-              el.ocasion === "juntada" &&
-              el.monto === "alto";
-            });
-            const indiceMontoJuntadaB3 = Math.floor(Math.random()*juntadaBlancoAlto.length)
-            
-            document.write(`<div class="card">
-            <img src=${juntadaBlancoAlto[indiceMontoJuntadaB3].foto} alt=${juntadaBlancoAlto[indiceMontoJuntadaB3].vinoRecomendado}">
-            <h1>${juntadaBlancoAlto[indiceMontoJuntadaB3].vinoRecomendado}</h1>
-            <p class="card-text">${juntadaBlancoAlto[indiceMontoJuntadaB3].frase}</p>
-            <a href="${juntadaBlancoAlto[indiceMontoJuntadaB3].linkCompra}" class="btn btn-primary">Comprar</a>
-            </div>`)
-
-            break;
-
-            default:
-                alert("Ingresá una de las opciones seleccionadas. Volvé a empezar");
-                montoAmigosBlanco();
-    }
-}
-function montoAmigosTinto(){
-
-    let op = prompt(`Elegí un rango de precios:
-    1: Entre $0 y $1000
-    2: Entre $1000 y $2000
-    3: Más de $2000.
-
-    Ingresá 1, 2 o 3.`);
-    switch (op) {
-        case "1":
-            let montoAmigosT1 = Number;
-            const juntadaTintoBajo = todosLosVinos.filter(function(el){
-              return el.color === "tinto" &&
-              el.ocasion === "juntada" &&
-              el.monto === "bajo";
-            });
-            const indiceMontoJuntadaT1 = Math.floor(Math.random()*juntadaTintoBajo.length)
-            
-            document.write(`<div class="card">
-            <img src=${juntadaTintoBajo[indiceMontoJuntadaT1].foto} alt=${juntadaTintoBajo[indiceMontoJuntadaT1].vinoRecomendado}">
-            <h1>${juntadaTintoBajo[indiceMontoJuntadaT1].vinoRecomendado}</h1>
-            <p class="card-text">${juntadaTintoBajo[indiceMontoJuntadaT1].frase}</p>
-            <a href="${juntadaTintoBajo[indiceMontoJuntadaT1].linkCompra}" class="btn btn-primary">Comprar</a>
-            </div>`)
-
-            break;
-
-        case "2":
-            let montoAmigosT2 = Number;
-            const juntadaTintoMedio = todosLosVinos.filter(function(el){
-              return el.color === "tinto" &&
-              el.ocasion === "juntada" &&
-              el.monto === "medio";
-            });
-            const indiceMontoJuntadaT2 = Math.floor(Math.random()*juntadaTintoMedio.length)
-            
-            document.write(`<div class="card">
-            <img src=${juntadaTintoMedio[indiceMontoJuntadaT2].foto} alt=${juntadaTintoMedio[indiceMontoJuntadaT2].vinoRecomendado}">
-            <h1>${juntadaTintoMedio[indiceMontoJuntadaT2].vinoRecomendado}</h1>
-            <p class="card-text">${juntadaTintoMedio[indiceMontoJuntadaT2].frase}</p>
-            <a href="${juntadaTintoMedio[indiceMontoJuntadaT2].linkCompra}" class="btn btn-primary">Comprar</a>
-            </div>`)
-
-            break;
-
-        case "3":
-            let montoAmigosT3 = Number;
-            const juntadaTintoAlto = todosLosVinos.filter(function(el){
-              return el.color === "tinto" &&
-              el.ocasion === "juntada" &&
-              el.monto === "alto";
-            });
-            const indiceMontoJuntadaT3 = Math.floor(Math.random()*juntadaTintoAlto.length)
-            
-            document.write(`<div class="card">
-            <img src=${juntadaTintoAlto[indiceMontoJuntadaT3].foto} alt=${juntadaTintoAlto[indiceMontoJuntadaT3].vinoRecomendado}">
-            <h1>${juntadaTintoAlto[indiceMontoJuntadaT3].vinoRecomendado}</h1>
-            <p class="card-text">${juntadaTintoAlto[indiceMontoJuntadaT3].frase}</p>
-            <a href="${juntadaTintoAlto[indiceMontoJuntadaT3].linkCompra}" class="btn btn-primary">Comprar</a>
-            </div>`)
-
-            break;
-
-            default:
-                alert("Ingresá una de las opciones seleccionadas. Volvé a empezar");
-                montoAmigosTinto();
-    }
-}
-function seleccionarVariedadAmigos(){
-
-    let op = prompt(`En esta ocasión, preferís
-    1: Tinto o 2: Blanco.
-
-    Ingresá 1 o 2.`);
-    switch (op) {
-        case "1":
-            let variedadAmigoT = Number(confirm("Vamos a ver cuánto querés gastar"));
-            montoAmigosTinto();
-            break;
-        case "2":
-            let variedadAmigoB = Number(confirm("Vamos a ver cuánto querés gastar"));
-            montoAmigosBlanco();
-            break;
-            default:
-                alert("Ingresá una de las opciones seleccionadas. Volvé a empezar");
-    }
-}
-
