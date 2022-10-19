@@ -571,15 +571,7 @@ let botonNo = document.querySelector('#botonMayorNo')
                 <a href="${romanceTintoAlto[indiceMontoRomanceT3].linkCompra}" class="btn btn-primary">Comprar</a>
                 </div>`
               }) ;
-
-                    
-
-          
-        
-        
-        
-        
-          }) ;
+}) ;
         
         
 
@@ -591,7 +583,61 @@ let botonNo = document.querySelector('#botonMayorNo')
           divPrincipal.innerHTML = `<h2>Elegí un rango de precios:</h2>
           <button id="botonRango1RomanceBlanco" class="botoninicio">Hasta $1000</button>
           <button id="botonRango2RomanceBlanco" class="botoninicio">Entre $1000 y $2000</button>
-          <button id="botonRango3RomanceBlanco" class="botoninicio">Más de $2000</button>`}) ;
+          <button id="botonRango3RomanceBlanco" class="botoninicio">Más de $2000</button>`
+        
+          let btnBlancoCRRango1 = document.querySelector('#botonRango1RomanceBlanco')  
+          btnBlancoCRRango1.addEventListener("click", () => {
+            const romanceBlancoBajo = todosLosVinos.filter(function(el){
+              return el.color === "blanco" &&
+              el.ocasion === "romance" &&
+              el.monto === "bajo";
+            });
+            const indiceMontoRomanceB1 = Math.floor(Math.random()*romanceBlancoBajo.length)
+        
+          divPrincipal.innerHTML = `<div class="card">
+          <img src=${romanceBlancoBajo[indiceMontoRomanceB1].foto} alt=${romanceBlancoBajo[indiceMontoRomanceB1].vinoRecomendado}">
+          <h1>${romanceBlancoBajo[indiceMontoRomanceB1].vinoRecomendado}</h1>
+          <p class="card-text">${romanceBlancoBajo[indiceMontoRomanceB1].frase}</p>
+          <a href="${romanceBlancoBajo[indiceMontoRomanceB1].linkCompra}" class="btn btn-primary">Comprar</a>
+          </div>`
+        }) ;
+        
+        let btnBlancoCRRango2 = document.querySelector('#botonRango2RomanceBlanco')  
+        btnBlancoCRRango2.addEventListener("click", () => {
+          const romanceBlancoMedio = todosLosVinos.filter(function(el){
+            return el.color === "blanco" &&
+            el.ocasion === "romance" &&
+            el.monto === "medio";
+          });
+          const indiceMontoRomanceB2 = Math.floor(Math.random()*romanceBlancoMedio.length)
+      
+        divPrincipal.innerHTML = `<div class="card">
+        <img src=${romanceBlancoMedio[indiceMontoRomanceB2].foto} alt=${romanceBlancoMedio[indiceMontoRomanceB2].vinoRecomendado}">
+        <h1>${romanceBlancoMedio[indiceMontoRomanceB2].vinoRecomendado}</h1>
+        <p class="card-text">${romanceBlancoMedio[indiceMontoRomanceB2].frase}</p>
+        <a href="${romanceBlancoMedio[indiceMontoRomanceB2].linkCompra}" class="btn btn-primary">Comprar</a>
+        </div>`
+        }) ;
+
+        let btnBlancoCRRango3 = document.querySelector('#botonRango3RomanceBlanco')  
+        btnBlancoCRRango3.addEventListener("click", () => {
+          const romanceBlancoAlto = todosLosVinos.filter(function(el){
+            return el.color === "blanco" &&
+            el.ocasion === "romance" &&
+            el.monto === "alto";
+          });
+          const indiceMontoRomanceB3 = Math.floor(Math.random()*romanceBlancoAlto.length)
+      
+        divPrincipal.innerHTML = `<div class="card">
+        <img src=${romanceBlancoAlto[indiceMontoRomanceB3].foto} alt=${romanceBlancoAlto[indiceMontoRomanceB3].vinoRecomendado}">
+        <h1>${romanceBlancoAlto[indiceMontoRomanceB3].vinoRecomendado}</h1>
+        <p class="card-text">${romanceBlancoAlto[indiceMontoRomanceB3].frase}</p>
+        <a href="${romanceBlancoAlto[indiceMontoRomanceB3].linkCompra}" class="btn btn-primary">Comprar</a>
+        </div>`
+        }) ;
+        
+        
+        }) ;
         
         }) ;
 
@@ -913,210 +959,4 @@ function seleccionarVariedadAmigos(){
                 alert("Ingresá una de las opciones seleccionadas. Volvé a empezar");
     }
 }
-function montoRomanticoBlanco(){
 
-    let op = prompt(`Elegí un rango de precios:
-    1: Entre $0 y $1000
-    2: Entre $1000 y $2000
-    3: Más de $2000.
-
-    Ingresá 1, 2 o 3.`);
-    switch (op) {
-        case "1":
-            let montoRomanticoB1 = Number;
-
-            const romanceBlancoBajo = todosLosVinos.filter(function(el){
-              return el.color === "blanco" &&
-              el.ocasion === "romance" &&
-              el.monto === "bajo";
-            });
-            const indiceMontoRomanceB1 = Math.floor(Math.random()*romanceBlancoBajo.length)
-            
-            document.write(`<div class="card">
-            <img src=${romanceBlancoBajo[indiceMontoRomanceB1].foto} alt=${romanceBlancoBajo[indiceMontoRomanceB1].vinoRecomendado}">
-            <h1>${romanceBlancoBajo[indiceMontoRomanceB1].vinoRecomendado}</h1>
-            <p class="card-text">${romanceBlancoBajo[indiceMontoRomanceB1].frase}</p>
-            <a href="${romanceBlancoBajo[indiceMontoRomanceB1].linkCompra}" class="btn btn-primary">Comprar</a>
-            </div>`)
-
-            break;
-
-        case "2":
-            let montoRomanticoB2 = Number;
-
-            const romanceBlancoMedio = todosLosVinos.filter(function(el){
-              return el.color === "blanco" &&
-              el.ocasion === "romance" &&
-              el.monto === "medio";
-            });
-            const indiceMontoRomanceB2 = Math.floor(Math.random()*romanceBlancoMedio.length)
-            
-            document.write(`<div class="card">
-            <img src=${romanceBlancoMedio[indiceMontoRomanceB2].foto} alt=${romanceBlancoMedio[indiceMontoRomanceB2].vinoRecomendado}">
-            <h1>${romanceBlancoMedio[indiceMontoRomanceB2].vinoRecomendado}</h1>
-            <p class="card-text">${romanceBlancoMedio[indiceMontoRomanceB2].frase}</p>
-            <a href="${romanceBlancoMedio[indiceMontoRomanceB2].linkCompra}" class="btn btn-primary">Comprar</a>
-            </div>`)
-
-            break;
-
-        case "3":
-            let montoRomanticoB3 = Number;
-
-            const romanceBlancoAlto = todosLosVinos.filter(function(el){
-              return el.color === "blanco" &&
-              el.ocasion === "romance" &&
-              el.monto === "alto";
-            });
-            const indiceMontoRomanceB3 = Math.floor(Math.random()*romanceBlancoAlto.length)
-            
-            document.write(`<div class="card">
-            <img src=${romanceBlancoAlto[indiceMontoRomanceB3].foto} alt=${romanceBlancoAlto[indiceMontoRomanceB3].vinoRecomendado}">
-            <h1>${romanceBlancoAlto[indiceMontoRomanceB3].vinoRecomendado}</h1>
-            <p class="card-text">${romanceBlancoAlto[indiceMontoRomanceB3].frase}</p>
-            <a href="${romanceBlancoAlto[indiceMontoRomanceB3].linkCompra}" class="btn btn-primary">Comprar</a>
-            </div>`)
-
-            break;
-
-            default:
-                alert("Ingresá una de las opciones seleccionadas. Volvé a empezar");
-                montoRomanticoBlanco();
-    }
-}
-function montoRomanticoTinto(){
-
-    let op = prompt(`Elegí un rango de precios:
-    1: Entre $0 y $1000
-    2: Entre $1000 y $2000
-    3: Más de $2000.
-
-    Ingresá 1, 2 o 3.`);
-    switch (op) {
-        case "1":
-            let montoRomanticoT1 = Number;
-
-            const romanceTintoBajo = todosLosVinos.filter(function(el){
-              return el.color === "tinto" &&
-              el.ocasion === "romance" &&
-              el.monto === "bajo";
-            });
-            const indiceMontoRomanceT1 = Math.floor(Math.random()*romanceTintoBajo.length)
-            
-            document.write(`<div class="card">
-            <img src=${romanceTintoBajo[indiceMontoRomanceT1].foto} alt=${romanceTintoBajo[indiceMontoRomanceT1].vinoRecomendado}">
-            <h1>${romanceTintoBajo[indiceMontoRomanceT1].vinoRecomendado}</h1>
-            <p class="card-text">${romanceTintoBajo[indiceMontoRomanceT1].frase}</p>
-            <a href="${romanceTintoBajo[indiceMontoRomanceT1].linkCompra}" class="btn btn-primary">Comprar</a>
-            </div>`)
-
-            break;
-
-        case "2":
-            let montoRomanticoT2 = Number;
-
-            const romanceTintoMedio = todosLosVinos.filter(function(el){
-              return el.color === "tinto" &&
-              el.ocasion === "romance" &&
-              el.monto === "medio";
-            });
-            const indiceMontoRomanceT2 = Math.floor(Math.random()*romanceTintoMedio.length)
-            
-            document.write(`<div class="card">
-            <img src=${romanceTintoMedio[indiceMontoRomanceT2].foto} alt=${romanceTintoMedio[indiceMontoRomanceT2].vinoRecomendado}">
-            <h1>${romanceTintoMedio[indiceMontoRomanceT2].vinoRecomendado}</h1>
-            <p class="card-text">${romanceTintoMedio[indiceMontoRomanceT2].frase}</p>
-            <a href="${romanceTintoMedio[indiceMontoRomanceT2].linkCompra}" class="btn btn-primary">Comprar</a>
-            </div>`)
-
-            break;
-
-        case "3":
-            let montoRomanticoT3 = Number;
-
-            const romanceTintoAlto = todosLosVinos.filter(function(el){
-              return el.color === "tinto" &&
-              el.ocasion === "romance" &&
-              el.monto === "medio";
-            });
-            const indiceMontoRomanceT3 = Math.floor(Math.random()*romanceTintoAlto.length)
-            
-            document.write(`<div class="card">
-            <img src=${romanceTintoAlto[indiceMontoRomanceT3].foto} alt=${romanceTintoAlto[indiceMontoRomanceT3].vinoRecomendado}">
-            <h1>${romanceTintoAlto[indiceMontoRomanceT3].vinoRecomendado}</h1>
-            <p class="card-text">${romanceTintoAlto[indiceMontoRomanceT3].frase}</p>
-            <a href="${romanceTintoAlto[indiceMontoRomanceT3].linkCompra}" class="btn btn-primary">Comprar</a>
-            </div>`)
-
-            break;
-
-            default:
-                alert("Ingresá una de las opciones seleccionadas. Volvé a empezar");
-                montoRomanticoTinto();
-    }
-}
-function seleccionarVariedadRomantica(){
-
-    let op = prompt(`En esta ocasión, preferís
-    1: Tinto o 2: Blanco.
-
-    Ingresá 1 o 2.`);
-    switch (op) {
-        case "1":
-            let variedadRomanticoT = Number;
-            montoRomanticoTinto();
-            break;
-        case "2":
-            let variedadRomanticoB = Number;
-            montoRomanticoBlanco();
-            break;
-            default:
-                alert("Ingresá una de las opciones seleccionadas. Volvé a empezar");
-    }
-}
-// function seleccionarOcasion(){
-
-//     let op = prompt(`Elegí una ocasión:
-//     1: Cena romántica
-//     2: Juntada con amigos
-//     3: Para regalar.
-
-//     Ingresá 1, 2 o 3.`);
-//     switch (op) {
-//         case "1":
-//             let montoRomantico = Number;
-//             seleccionarVariedadRomantica();
-//             break;
-//         case "2":
-//             let montoAmigo = Number;
-//             seleccionarVariedadAmigos();
-//             break;
-//         case "3":
-//             let montoRegalo = Number;
-//             seleccionarVariedadRegalo();
-//             break;
-//         default:
-//             alert("Ingresá una de las opciones seleccionadas. Volvé a empezar");        }
-// }
-// function elegirSiNo(siNo){
-//     if(siNo == "si"){
-//         seleccionarOcasion();
-//     }
-//     else{
-//         alert("Entonces disfrutá tu agüita");
-//     }
-// }
-// function tomarDecision(bienvenida){
-//     if(bienvenida){
-//         let siNo = prompt("Querés que recomendemos un vino? Respondé SI/NO").toLowerCase();
-//         elegirSiNo(siNo);
-//     }
-//     else{
-//         alert("Nos vemos pronto");
-//     }
-// }
-// function iniciarRecomendacion(){
-//     let bienvenida = confirm("Bienvenido al Sommelier online");
-//     tomarDecision(bienvenida);
-// }
-// iniciarRecomendacion();
