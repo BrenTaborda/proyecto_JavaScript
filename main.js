@@ -155,7 +155,7 @@ const todosLosVinos = [
     {
       vinoRecomendado: "Hommage Malbec Carinae",
       frase: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-      foto: "./Imagenes/regaloTintoM3.jpg",
+      foto: "./Imagenes/regaloTintoM3c.jpg",
       linkCompra: "http://www.google.com",
       color: "tinto",
       ocasion: "regalar",
@@ -762,165 +762,133 @@ let botonNo = document.querySelector('#botonMayorNo')
         
         }) ;
 
-  }) ;
+        let btnParaRegalar = document.querySelector('#botonParaRegalar')  
+        btnParaRegalar.addEventListener("click", () => {
+        divPrincipal.innerHTML = `<h2>En esta ocasión preferís:</h2>
+        <button id="botonTintoPR" class="botoninicio">Tinto</button>
+        <button id="botonBlancoPR" class="botoninicio">Blanco</button>`
 
-});
+          let btnTintoPR = document.querySelector('#botonTintoPR')  
+          btnTintoPR.addEventListener("click", () => {
+          divPrincipal.innerHTML = `<h2>Elegí un rango de precios:</h2>
+          <button id="botonRango1RegaloTinto" class="botoninicio">Hasta $1000</button>
+          <button id="botonRango2RegaloTinto" class="botoninicio">Entre $1000 y $2000</button>
+          <button id="botonRango3RegaloTinto" class="botoninicio">Más de $2000</button>`
 
-
-
-function montoRegaloBlanco(){
-    let op = prompt(`Elegí un rango de precios:
-    1: Entre $0 y $1000
-    2: Entre $1000 y $2000
-    3: Más de $2000.
-    
-    Ingresá 1, 2 o 3.`);
-    switch (op) {
-        case "1":
-            let montoRegaloB1 = Number;
+                    let btnTintoPRRango1 = document.querySelector('#botonRango1RegaloTinto')  
+                    btnTintoPRRango1.addEventListener("click", () => {
+                      const regaloTintoBajo = todosLosVinos.filter(function(el){
+                        return el.color === "tinto" &&
+                        el.ocasion === "regalar" &&
+                        el.monto === "bajo";
+                      });
+                      const indiceMontoRegaloT1 = Math.floor(Math.random()*regaloTintoBajo.length)
+                  
+                    divPrincipal.innerHTML = `<div class="card">
+                    <img src=${regaloTintoBajo[indiceMontoRegaloT1].foto} alt=${regaloTintoBajo[indiceMontoRegaloT1].vinoRecomendado}">
+                    <h1>${regaloTintoBajo[indiceMontoRegaloT1].vinoRecomendado}</h1>
+                    <p class="card-text">${regaloTintoBajo[indiceMontoRegaloT1].frase}</p>
+                    <a href="${regaloTintoBajo[indiceMontoRegaloT1].linkCompra}" class="btn btn-primary">Comprar</a>
+                    </div>`
+                  
+                  
+                  }) ;
+                  let btnTintoPRRango2 = document.querySelector('#botonRango2RegaloTinto')  
+                  btnTintoPRRango2.addEventListener("click", () => {
+                    const regaloTintoMedio = todosLosVinos.filter(function(el){
+                      return el.color === "tinto" &&
+                      el.ocasion === "regalar" &&
+                      el.monto === "medio";
+                    });
+                    const indiceMontoRegaloT2 = Math.floor(Math.random()*regaloTintoMedio.length)
+                
+                  divPrincipal.innerHTML = `<div class="card">
+                  <img src=${regaloTintoMedio[indiceMontoRegaloT2].foto} alt=${regaloTintoMedio[indiceMontoRegaloT2].vinoRecomendado}">
+                  <h1>${regaloTintoMedio[indiceMontoRegaloT2].vinoRecomendado}</h1>
+                  <p class="card-text">${regaloTintoMedio[indiceMontoRegaloT2].frase}</p>
+                  <a href="${regaloTintoMedio[indiceMontoRegaloT2].linkCompra}" class="btn btn-primary">Comprar</a>
+                  </div>`
+                }) ;
+                let btnTintoPRRango3 = document.querySelector('#botonRango3RegaloTinto')  
+                btnTintoPRRango3.addEventListener("click", () => {
+                  const regaloTintoAlto = todosLosVinos.filter(function(el){
+                    return el.color === "tinto" &&
+                    el.ocasion === "regalar" &&
+                    el.monto === "alto";
+                  });
+                  const indiceMontoRegaloT3 = Math.floor(Math.random()*regaloTintoAlto.length)
+              
+                divPrincipal.innerHTML = `<div class="card">
+                <img src=${regaloTintoAlto[indiceMontoRegaloT3].foto} alt=${regaloTintoAlto[indiceMontoRegaloT3].vinoRecomendado}">
+                <h1>${regaloTintoAlto[indiceMontoRegaloT3].vinoRecomendado}</h1>
+                <p class="card-text">${regaloTintoAlto[indiceMontoRegaloT3].frase}</p>
+                <a href="${regaloTintoAlto[indiceMontoRegaloT3].linkCompra}" class="btn btn-primary">Comprar</a>
+                </div>`
+              }) ;
+}) ;
+          let btnBlancoPR = document.querySelector('#botonBlancoPR')  
+          btnBlancoPR.addEventListener("click", () => {
+          divPrincipal.innerHTML = `<h2>Elegí un rango de precios:</h2>
+          <button id="botonRango1RegaloBlanco" class="botoninicio">Hasta $1000</button>
+          <button id="botonRango2RegaloBlanco" class="botoninicio">Entre $1000 y $2000</button>
+          <button id="botonRango3RegaloBlanco" class="botoninicio">Más de $2000</button>`
+        
+          let btnBlancoPRRango1 = document.querySelector('#botonRango1RegaloBlanco')  
+          btnBlancoPRRango1.addEventListener("click", () => {
             const regaloBlancoBajo = todosLosVinos.filter(function(el){
               return el.color === "blanco" &&
               el.ocasion === "regalar" &&
               el.monto === "bajo";
             });
             const indiceMontoRegaloB1 = Math.floor(Math.random()*regaloBlancoBajo.length)
-            
-            document.write(`<div class="card">
-            <img src=${regaloBlancoBajo[indiceMontoRegaloB1].foto} alt=${regaloBlancoBajo[indiceMontoRegaloB1].vinoRecomendado}">
-            <h1>${regaloBlancoBajo[indiceMontoRegaloB1].vinoRecomendado}</h1>
-            <p class="card-text">${regaloBlancoBajo[indiceMontoRegaloB1].frase}</p>
-            <a href="${regaloBlancoBajo[indiceMontoRegaloB1].linkCompra}" class="btn btn-primary">Comprar</a>
-            </div>`)
-            
+        
+          divPrincipal.innerHTML = `<div class="card">
+          <img src=${regaloBlancoBajo[indiceMontoRegaloB1].foto} alt=${regaloBlancoBajo[indiceMontoRegaloB1].vinoRecomendado}">
+          <h1>${regaloBlancoBajo[indiceMontoRegaloB1].vinoRecomendado}</h1>
+          <p class="card-text">${regaloBlancoBajo[indiceMontoRegaloB1].frase}</p>
+          <a href="${regaloBlancoBajo[indiceMontoRegaloB1].linkCompra}" class="btn btn-primary">Comprar</a>
+          </div>`
+        }) ;
+        
+        let btnBlancoPRRango2 = document.querySelector('#botonRango2RegaloBlanco')  
+        btnBlancoPRRango2.addEventListener("click", () => {
+          const regaloBlancoMedio = todosLosVinos.filter(function(el){
+            return el.color === "blanco" &&
+            el.ocasion === "regalar" &&
+            el.monto === "medio";
+          });
+          const indiceMontoRegaloB2 = Math.floor(Math.random()*regaloBlancoMedio.length)
+      
+        divPrincipal.innerHTML = `<div class="card">
+        <img src=${regaloBlancoMedio[indiceMontoRegaloB2].foto} alt=${regaloBlancoMedio[indiceMontoRegaloB2].vinoRecomendado}">
+        <h1>${regaloBlancoMedio[indiceMontoRegaloB2].vinoRecomendado}</h1>
+        <p class="card-text">${regaloBlancoMedio[indiceMontoRegaloB2].frase}</p>
+        <a href="${regaloBlancoMedio[indiceMontoRegaloB2].linkCompra}" class="btn btn-primary">Comprar</a>
+        </div>`
+        }) ;
 
-            break;
+        let btnBlancoPRRango3 = document.querySelector('#botonRango3RegaloBlanco')  
+        btnBlancoPRRango3.addEventListener("click", () => {
+          const regaloBlancoAlto = todosLosVinos.filter(function(el){
+            return el.color === "blanco" &&
+            el.ocasion === "regalar" &&
+            el.monto === "alto";
+          });
+          const indiceMontoRegaloB3 = Math.floor(Math.random()*regaloBlancoAlto.length)
+      
+        divPrincipal.innerHTML = `<div class="card">
+        <img src=${regaloBlancoAlto[indiceMontoRegaloB3].foto} alt=${regaloBlancoAlto[indiceMontoRegaloB3].vinoRecomendado}">
+        <h1>${regaloBlancoAlto[indiceMontoRegaloB3].vinoRecomendado}</h1>
+        <p class="card-text">${regaloBlancoAlto[indiceMontoRegaloB3].frase}</p>
+        <a href="${regaloBlancoAlto[indiceMontoRegaloB3].linkCompra}" class="btn btn-primary">Comprar</a>
+        </div>`
+        }) ;
+        
+        
+        }) ;
+        
+        }) ;
 
-        case "2":
-            let montoRegaloB2 = Number;
+  }) ;
 
-            const regaloBlancoMedio = todosLosVinos.filter(function(el){
-              return el.color === "blanco" &&
-              el.ocasion === "regalar" &&
-              el.monto === "medio";
-            });
-            const indiceMontoRegaloB2 = Math.floor(Math.random()*regaloBlancoMedio.length)
-            
-            document.write(`<div class="card">
-            <img src=${regaloBlancoMedio[indiceMontoRegaloB2].foto} alt=${regaloBlancoMedio[indiceMontoRegaloB2].vinoRecomendado}">
-            <h1>${regaloBlancoMedio[indiceMontoRegaloB2].vinoRecomendado}</h1>
-            <p class="card-text">${regaloBlancoMedio[indiceMontoRegaloB2].frase}</p>
-            <a href="${regaloBlancoMedio[indiceMontoRegaloB2].linkCompra}" class="btn btn-primary">Comprar</a>
-            </div>`)
-            
-            break;
-
-        case "3":
-            let montoRegaloB3 = Number;
-
-            const regaloBlancoAlto = todosLosVinos.filter(function(el){
-              return el.color === "blanco" &&
-              el.ocasion === "regalar" &&
-              el.monto === "alto";
-            });
-            const indiceMontoRegaloB3 = Math.floor(Math.random()*regaloBlancoAlto.length)
-            
-            document.write(`<div class="card">
-            <img src=${regaloBlancoAlto[indiceMontoRegaloB3].foto} alt=${regaloBlancoAlto[indiceMontoRegaloB3].vinoRecomendado}">
-            <h1>${regaloBlancoAlto[indiceMontoRegaloB3].vinoRecomendado}</h1>
-            <p class="card-text">${regaloBlancoAlto[indiceMontoRegaloB3].frase}</p>
-            <a href="${regaloBlancoAlto[indiceMontoRegaloB3].linkCompra}" class="btn btn-primary">Comprar</a>
-            </div>`)
-            break;
-
-            default:
-                alert("Ingresá una de las opciones seleccionadas. Volvé a empezar")
-                montoRegaloBlanco();
-    }
-}
-function montoRegaloTinto(){
-    let op = prompt(`Elegí un rango de precios:
-    1: Entre $0 y $1000
-    2: Entre $1000 y $2000
-    3: Más de $2000.
-
-    Ingresá 1, 2 o 3.`);
-    switch (op) {
-        case "1":
-            let montoRegaloT1 = Number;
-            const regaloTintoBajo = todosLosVinos.filter(function(el){
-              return el.color === "tinto" &&
-              el.ocasion === "regalar" &&
-              el.monto === "bajo";
-            });
-            const indiceMontoRegaloT1 = Math.floor(Math.random()*regaloTintoBajo.length)
-            
-            document.write(`<div class="card">
-            <img src=${regaloTintoBajo[indiceMontoRegaloT1].foto} alt=${regaloTintoBajo[indiceMontoRegaloT1].vinoRecomendado}">
-            <h1>${regaloTintoBajo[indiceMontoRegaloT1].vinoRecomendado}</h1>
-            <p class="card-text">${regaloTintoBajo[indiceMontoRegaloT1].frase}</p>
-            <a href="${regaloTintoBajo[indiceMontoRegaloT1].linkCompra}" class="btn btn-primary">Comprar</a>
-            </div>`)
-
-            break;
-
-        case "2":
-            let montoRegaloT2 = Number;
-            const regaloTintoMedio = todosLosVinos.filter(function(el){
-              return el.color === "tinto" &&
-              el.ocasion === "regalar" &&
-              el.monto === "medio";
-            });
-            const indiceMontoRegaloT2 = Math.floor(Math.random()*regaloTintoMedio.length)
-            
-            document.write(`<div class="card">
-            <img src=${regaloTintoMedio[indiceMontoRegaloT2].foto} alt=${regaloTintoMedio[indiceMontoRegaloT2].vinoRecomendado}">
-            <h1>${regaloTintoMedio[indiceMontoRegaloT2].vinoRecomendado}</h1>
-            <p class="card-text">${regaloTintoMedio[indiceMontoRegaloT2].frase}</p>
-            <a href="${regaloTintoMedio[indiceMontoRegaloT2].linkCompra}" class="btn btn-primary">Comprar</a>
-            </div>`)
-            
-            console.log(regaloTintoMedio);
-            break;
-
-        case "3":
-            let montoRegaloT3 = Number;
-
-            const regaloTintoAlto = todosLosVinos.filter(function(el){
-              return el.color === "tinto" &&
-              el.ocasion === "regalar" &&
-              el.monto === "alto";
-            });
-            const indiceMontoRegaloT3 = Math.floor(Math.random()*regaloTintoAlto.length)
-            
-            document.write(`<div class="card">
-            <img src=${regaloTintoAlto[indiceMontoRegaloT3].foto} alt=${regaloTintoAlto[indiceMontoRegaloT3].vinoRecomendado}">
-            <h1>${regaloTintoAlto[indiceMontoRegaloT3].vinoRecomendado}</h1>
-            <p class="card-text">${regaloTintoAlto[indiceMontoRegaloT3].frase}</p>
-            <a href="${regaloTintoAlto[indiceMontoRegaloT3].linkCompra}" class="btn btn-primary">Comprar</a>
-            </div>`)
-
-            break;
-            default:
-                alert("Ingresá una de las opciones seleccionadas. Volvé a empezar")
-                montoRegaloTinto();
-    }
-}
-function seleccionarVariedadRegalo(){
-
-    let op = prompt(`En esta ocasión, preferís
-    1: Tinto o 2: Blanco.
-
-    Ingresá 1 o 2.`);
-    switch (op) {
-        case "1":
-            let variedadRegaloT = Number(confirm("Vamos a ver cuánto querés gastar"));
-            montoRegaloTinto();
-            break;
-        case "2":
-            let variedadRegaloB = Number(confirm("Vamos a ver cuánto querés gastar"));
-            montoRegaloBlanco();
-            break;
-            default:
-                alert("Ingresá una de las opciones seleccionadas. Volvé a empezar");
-    }
-}
+});
