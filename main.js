@@ -8,11 +8,46 @@ let divPrincipal = document.getElementById("inicioApp");
 //---------------------------------------------------------------------
 
 let botonNo = document.getElementById("botonMayorNo")
-let divPrincipalNo = document.getElementById("mayoriaDeEdad");
   
   botonNo.addEventListener ("click", () => {
-    divPrincipalNo.innerHTML = `<h2>Todavía no podés beber alcohol</h2>`
+    divPrincipal.innerHTML = `<h2>Todavía no podés beber alcohol</h2>`
   }) 
+
+//---------------------------------------------------------------------
+
+
+// let boton = document.getElementById("botonInicio") 
+// let divPrincipal = document.querySelector('#inicioApp');
+
+//   boton.addEventListener ("click", () => {
+//     divPrincipal.innerHTML = `<div id="mayoriaDeEdad"><h2>¿Sos mayor de edad?</h2><button id="botonMayorSi" class="botoninicio">SI</button><button id="botonMayorNo" class="botoninicio">NO</button></div>`
+//   })
+
+// let botonNoo = document.querySelector('#botonMayorNo')  
+//   botonNoo.addEventListener("click", () => {
+//     divPrincipal.innerHTML = `<h2>Todavía no podés beber alcohol</h2>`
+//   }) 
+
+//---------------------------------------------------------------------
+
+
+
+//---------------------------------------------------------------------
+
+
+// let botonNo = document.getElementById("botonMayorNo")
+// let divPrincipalNo = document.getElementById("mayoriaDeEdad");
+  
+//   botonNo.addEventListener ("click", () => {
+//     divPrincipalNo.innerHTML = `<h2>Todavía no podés beber alcohol</h2>`
+//   }) 
+
+// let botonNo = document.getElementById("botonMayorNo")
+// let divPrincipalNo = document.getElementById("mayoriaDeEdad");
+  
+//   botonNo.addEventListener ("click", () => {
+//     divPrincipalNo.innerHTML = `<h2>Todavía no podés beber alcohol</h2>`
+//   }) 
 
 
 
