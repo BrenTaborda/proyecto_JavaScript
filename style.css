@@ -156,3 +156,11 @@ body {
     opacity: 0.7;
     transition: opacity 1s ease-out;
     }
+
+
+.basic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
