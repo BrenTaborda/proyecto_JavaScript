@@ -518,11 +518,7 @@ boton.addEventListener ("click", () => {
               </label>
               <button class="botonUser" id="botonUser">Guardar nombre</button>
     </form>
-    <h2>¿Sos mayor de edad?</h2>
-    <div class="siNo">
-      <button id="botonMayorSi" class="botoninicio">SI</button>
-      <button id="botonMayorNo" class="botoninicio">NO</button>
-    </div>
+
     </div>`
 
 const username = document.getElementById('username')
@@ -547,35 +543,19 @@ botonUser.addEventListener('click', (e) =>{
           // console.log(devolucionNombre)
           // console.log(devolucionNombre.username)
     const nombredeUsuario = devolucionNombre.username
-          console.log("Hola " + nombredeUsuario)
-
-/*           let usuario;
-          let usuarioEnLS = JSON.stringify(localStorage.getItem('dataName'))
-          
-          // Si había algo almacenado, lo recupero. Si no le pido un ingreso
-          if (usuarioEnLS) {
-              usuario = usuarioEnLS
-          } else {
-            usuario = prompt('Ingrese su nombre de usuario')
-
-          } */
-          
-
-    // let usuario;
-    // let usuarioenLS = JSON.stringify(localStorage.getItem('username'));
-
-    // if (usuarioenLS){
-    //   nombredeUsuario === '""', alert("errrrrorrrr")
-    // } else {
-    //   alert("Bienvenido!")
-    // }
-
-})
+          // console.log("Hola " + nombredeUsuario)
 
 
+    divPrincipal.innerHTML = `<div id="mayoriaDeEdad" class="basic">
+    <h2>Hola ${nombredeUsuario}</h2>
+    <h2>¿Sos mayor de edad?</h2>
+    <div class="siNo">
+      <button id="botonMayorSi" class="botoninicio">SI</button>
+      <button id="botonMayorNo" class="botoninicio">NO</button>
+    </div>
+    </div>`
 
-
-let botonNo = document.querySelector('#botonMayorNo')  
+    let botonNo = document.querySelector('#botonMayorNo')  
   botonNo.addEventListener("click", () => {
     divPrincipal.innerHTML = `
     <h2></h2>
@@ -646,46 +626,22 @@ let botonNo = document.querySelector('#botonMayorNo')
                   });
                   const indiceMontoRomanceT3 = Math.floor(Math.random()*romanceTintoAlto.length);
               
-                divPrincipal.innerHTML = `<div class="card">
+                divPrincipal.innerHTML = `<h2>${nombredeUsuario}, con este vino, la cena es un éxito asegurado😉</h2>
+                <div class="card">
                 <img src=${romanceTintoAlto[indiceMontoRomanceT3].foto} alt=${romanceTintoAlto[indiceMontoRomanceT3].vinoRecomendado}">
                 <h1>${romanceTintoAlto[indiceMontoRomanceT3].vinoRecomendado}</h1>
                 <p class="card-text">${romanceTintoAlto[indiceMontoRomanceT3].frase}</p>
                 <a href="${romanceTintoAlto[indiceMontoRomanceT3].linkCompra}" class="btn btn-primary">Comprar</a>
                 </div>`
-                // console.log(romanceTintoAlto);
-                sessionStorage.setItem('opciones', {romanceTintoAlto});
-                const recuperoOpciones = sessionStorage.getItem('opciones')
-                // console.log(recuperoOpciones)
-                const recuperadosEnJSON = JSON.stringify(recuperoOpciones);
-                // console.log(recuperadosEnJSON)
-                // console.log(typeof recuperoOpciones);
-                // console.log(typeof recuperadosEnJSON);    
-
-
-
-
 
               }) ;
 
           //guardar
-          sessionStorage.setItem('evento','cena romántica')
           sessionStorage.setItem('color','tinto')
           //recuperar
-           let recuperoEvt = sessionStorage.getItem('evento')
            let recuperoColor = sessionStorage.getItem('color')
 
-          //  console.log(recuperoEvt)  
-          //  console.log(recuperoColor)  
-
-           for (let i = 1; i < sessionStorage.length; i++) {
-            let clave = sessionStorage.key(i);
-            // console.log("Clave: "+ clave);
-            // console.log("Valor: "+ sessionStorage.getItem(clave));
-        }
-        
-
-
-           if(recuperoColor === 'tinto'){
+          if(recuperoColor === 'tinto'){
             Swal.fire("Los vinos tintos maridan bien con carnes rojas")}
           
           
@@ -1015,11 +971,12 @@ let botonNo = document.querySelector('#botonMayorNo')
         }) ;
         
         }) ;
-/*     //guardar
-    sessionStorage.setItem('edad','mayor')
-    //recuperar
-    let recupero = sessionStorage.getItem('edad')
-    console.log(recupero) */
   }) ;
+})
+
+
+
+
+
 
 });
