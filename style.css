@@ -6,6 +6,11 @@
 
 body {
     background-color: rgb(206, 206, 213);
+    transition: .3s ease all;
+}
+
+body.dark {
+    background-color: rgb(25, 25, 33);
 }
 
 .header {
@@ -21,6 +26,55 @@ body {
     align-items: center;    
     padding: 1rem 3rem;
     }
+
+body.dark header{
+    background-color: #838794;
+}
+
+.switch {
+    background: #343d5b;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+}
+.switch::after{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: #F1F1F1;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: .3s ease all;
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.2);
+}
+
+.switch.active {
+    background: orange;
+    color: black;
+}
+
+.switch.active::after {
+    left: unset;
+    right: 0;
+}
+
+.switch span {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    display: block;
+    background: none;
+    color: #fff;
+
+}
+
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -70,24 +124,53 @@ body {
 
 }
 
+body.dark .card{
+    background: #343d5b;
+}
+body.dark .card h1{
+color: antiquewhite;
+}
+body.dark .card-text {
+    color: antiquewhite;
+}
+body.dark .card a{
+    color: #a6b3df;
+}
+
 .bienvenida{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    /* width: 100%!important; */
 }
+
+body.dark .bienvenida h1{
+    color: antiquewhite;
+    }
+
+    body.dark .bienvenida h2{
+        color: antiquewhite;
+        }
+
+        body.dark .bienvenida h4{
+            color: antiquewhite;
+            }
 
 .bienvenida h1 {
     font-family: 'Open Sans', sans-serif;
     font-size: 30px;
     text-align: center;
+    margin-top: 2rem;
 }
 
 .bienvenida h2 {
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
     text-align: center;
+    margin-top: 2rem;
+
 }
 
 .bienvenida h4 {
@@ -116,9 +199,14 @@ body {
     color: rgb(226, 226, 230);
     padding: 1rem;
     border-radius: 0.5rem;
-    margin-left: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
 
 }
+
+body.dark .botoninicio{
+    background-color: #343d5b;
+    }
 
 .botoninicio:hover {
     background-color: rgb(45, 64, 128);
@@ -172,5 +260,60 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/* .swal2-title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 22px;
+} */
+
+.labelUser{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.siNo{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.formUser{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+form label .fa-solid{
+    font-size: 20px;
+    color: #343d5b;
+    margin-right: 10px;
+}
+
+form label input{
+    outline: none;
+    border: none;
+    color: #343d5b;
+    border-bottom: solid 1px rgb(41, 64, 147);
+    padding: 0 5px;
+    font-size: 18px;
+}
+
+form label input::placeholder{
+    color: #5d6786;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.botonUser{
+    color: antiquewhite;
+    border: none;
+    background-color: #5d6786;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    border-radius: 0.5rem;
+
 }
 

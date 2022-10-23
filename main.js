@@ -487,21 +487,103 @@ const todosLosVinos = [
     },
 ];
 
-let boton = document.querySelector('#botonInicio') 
+const btnSwitch = document.querySelector('#switch');
+btnSwitch.addEventListener('click', () =>{
+  document.body.classList.toggle('dark');
+  btnSwitch.classList.toggle('active');
+
+  if(document.body.classList.contains('dark')){
+    localStorage.setItem('dark-mode', 'true')
+  } else {
+    localStorage.setItem('dark-mode', 'false')
+  }
+});
+
+if(localStorage.getItem('dark-mode') === 'true'){
+  document.body.classList.add('dark');
+} else {
+  document.body.classList.remove('dark');
+}
+
+let boton = document.querySelector('#botonInicio') ;
 let divPrincipal = document.querySelector('#inicioApp');
 
 boton.addEventListener ("click", () => {
     divPrincipal.innerHTML = `<div id="mayoriaDeEdad" class="basic">
+    <form id="form" class="formUser" action="">
+              <h2>¿Cómo te llamás?</h2>
+              <label class="labelUser">
+                  <i class="fa-solid fa-user"></i>
+                  <input placeholder="Ingresá tu nombre" type="text" id="username">
+              </label>
+              <button class="botonUser" id="botonUser">Guardar nombre</button>
+    </form>
     <h2>¿Sos mayor de edad?</h2>
-    <button id="botonMayorSi" class="botoninicio">SI</button>
-    <button id="botonMayorNo" class="botoninicio">NO</button></div>`
+    <div class="siNo">
+      <button id="botonMayorSi" class="botoninicio">SI</button>
+      <button id="botonMayorNo" class="botoninicio">NO</button>
+    </div>
+    </div>`
+
+const username = document.getElementById('username')
+const botonUser = document.getElementById('botonUser')
+
+botonUser.addEventListener('click', (e) =>{
+    e.preventDefault()
+    const dataName ={
+      username: username.value
+    }
+          // console.log(dataName)
+          // console.log(typeof dataName)
+
+    const dataNameEnJSON = JSON.stringify(dataName);
+
+          // console.log(dataNameEnJSON); 
+          // console.log(typeof dataName); 
+          // console.log(typeof dataNameEnJSON);  
+
+    localStorage.setItem("dataName", dataNameEnJSON);
+    const devolucionNombre = JSON.parse(dataNameEnJSON)
+          // console.log(devolucionNombre)
+          // console.log(devolucionNombre.username)
+    const nombredeUsuario = devolucionNombre.username
+          console.log("Hola " + nombredeUsuario)
+
+/*           let usuario;
+          let usuarioEnLS = JSON.stringify(localStorage.getItem('dataName'))
+          
+          // Si había algo almacenado, lo recupero. Si no le pido un ingreso
+          if (usuarioEnLS) {
+              usuario = usuarioEnLS
+          } else {
+            usuario = prompt('Ingrese su nombre de usuario')
+
+          } */
+          
+
+    // let usuario;
+    // let usuarioenLS = JSON.stringify(localStorage.getItem('username'));
+
+    // if (usuarioenLS){
+    //   nombredeUsuario === '""', alert("errrrrorrrr")
+    // } else {
+    //   alert("Bienvenido!")
+    // }
+
+})
+
+
+
 
 let botonNo = document.querySelector('#botonMayorNo')  
   botonNo.addEventListener("click", () => {
-    divPrincipal.innerHTML = `<h2>Todavía no podés beber alcohol</h2>`
+    divPrincipal.innerHTML = `
+    <h2></h2>
+    <h2>Todavía no podés beber alcohol</h2>`
   }) ;
 
   let botonSi = document.querySelector('#botonMayorSi')  
+
   botonSi.addEventListener("click", () => {
     divPrincipal.innerHTML = `<h2>Sommelier de Barrio te va a dar una recomendación personalizada. Elegí una ocasión:</h2>
     <button id="botonCenaRomantica" class="botoninicio">Cena romántica</button>
@@ -562,7 +644,7 @@ let botonNo = document.querySelector('#botonMayorNo')
                     el.ocasion === "romance" &&
                     el.monto === "alto";
                   });
-                  const indiceMontoRomanceT3 = Math.floor(Math.random()*romanceTintoAlto.length)
+                  const indiceMontoRomanceT3 = Math.floor(Math.random()*romanceTintoAlto.length);
               
                 divPrincipal.innerHTML = `<div class="card">
                 <img src=${romanceTintoAlto[indiceMontoRomanceT3].foto} alt=${romanceTintoAlto[indiceMontoRomanceT3].vinoRecomendado}">
@@ -570,8 +652,44 @@ let botonNo = document.querySelector('#botonMayorNo')
                 <p class="card-text">${romanceTintoAlto[indiceMontoRomanceT3].frase}</p>
                 <a href="${romanceTintoAlto[indiceMontoRomanceT3].linkCompra}" class="btn btn-primary">Comprar</a>
                 </div>`
+                // console.log(romanceTintoAlto);
+                sessionStorage.setItem('opciones', {romanceTintoAlto});
+                const recuperoOpciones = sessionStorage.getItem('opciones')
+                // console.log(recuperoOpciones)
+                const recuperadosEnJSON = JSON.stringify(recuperoOpciones);
+                // console.log(recuperadosEnJSON)
+                // console.log(typeof recuperoOpciones);
+                // console.log(typeof recuperadosEnJSON);    
+
+
+
+
+
               }) ;
-}) ;
+
+          //guardar
+          sessionStorage.setItem('evento','cena romántica')
+          sessionStorage.setItem('color','tinto')
+          //recuperar
+           let recuperoEvt = sessionStorage.getItem('evento')
+           let recuperoColor = sessionStorage.getItem('color')
+
+          //  console.log(recuperoEvt)  
+          //  console.log(recuperoColor)  
+
+           for (let i = 1; i < sessionStorage.length; i++) {
+            let clave = sessionStorage.key(i);
+            // console.log("Clave: "+ clave);
+            // console.log("Valor: "+ sessionStorage.getItem(clave));
+        }
+        
+
+
+           if(recuperoColor === 'tinto'){
+            Swal.fire("Los vinos tintos maridan bien con carnes rojas")}
+          
+          
+          }) ;
           let btnBlancoCR = document.querySelector('#botonBlancoCR')  
           btnBlancoCR.addEventListener("click", () => {
           divPrincipal.innerHTML = `<h2>Elegí un rango de precios:</h2>
@@ -630,10 +748,19 @@ let botonNo = document.querySelector('#botonMayorNo')
         </div>`
         }) ;
         
+        sessionStorage.setItem('color','blanco')
+        //recuperar
+         let recupero = sessionStorage.getItem('color')
+        //  console.log(recupero)  
+
+         if(recupero === 'blanco'){
+          Swal.fire("Los vinos blancos maridan bien con pescados. Los mariscos son una buena opción para una cena romántica.")
+        }
+          
         
-        }) ;
-        
-        }) ;
+      }) ;
+      
+      }) ;
 
         let btnJuntadaAmigos = document.querySelector('#botonJuntadaAmigos')  
         btnJuntadaAmigos.addEventListener("click", () => {
@@ -888,7 +1015,11 @@ let botonNo = document.querySelector('#botonMayorNo')
         }) ;
         
         }) ;
-
+/*     //guardar
+    sessionStorage.setItem('edad','mayor')
+    //recuperar
+    let recupero = sessionStorage.getItem('edad')
+    console.log(recupero) */
   }) ;
 
 });
