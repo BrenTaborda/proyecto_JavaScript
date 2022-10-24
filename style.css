@@ -284,10 +284,21 @@ body.dark .botoninicio{
     text-align: center;
 }
 
+body.dark form label .fa-solid{
+    color: antiquewhite;
+}
+
 form label .fa-solid{
     font-size: 20px;
     color: #343d5b;
     margin-right: 10px;
+}
+
+body.dark form label input{
+    background-color: rgb(70, 70, 70);
+    border-bottom: solid 1px antiquewhite;
+    color: #e6e6e6;
+
 }
 
 form label input{
@@ -295,9 +306,14 @@ form label input{
     border: none;
     color: #343d5b;
     border-bottom: solid 1px rgb(41, 64, 147);
-    padding: 0 5px;
+    padding: 5px;
     font-size: 18px;
 }
+
+body.dark form label input::placeholder{
+    color: #bebebe;
+}
+
 
 form label input::placeholder{
     color: #5d6786;
