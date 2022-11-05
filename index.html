@@ -28,6 +28,19 @@
             <button id="botonInicio" type="button" class="botoninicio">HACÉ CLICK AQUÍ</button>
         </div>
     </main>
+    <div class="baseClima">
+        <div class="baseClima__A">
+            <label for="ciudad">Contanos dónde estás:</label>
+            <input class="baseClima__input" type="text" id="ciudad">
+            <button class="baseClima__btn" id="btnClima">Enviar</button>
+        </div>
+        <div class="baseClima__B">
+            <output>
+                <b><p id="temperatura"  class="baseClima__B--temp"></p></b>
+            </output>
+            <p id="devolucionTemperatura" class="baseClima__B--devTemp"></p>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="footer__iconosRedesSociales">
@@ -39,6 +52,7 @@
     </footer>
     <script src="sweetalert2.js"></script>
     <link rel="stylesheet" href="sweetalert2.css">
+    <script src="apiclima.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
 </body>
