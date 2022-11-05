@@ -84,7 +84,7 @@ body.dark header{
     /* margin: 0 auto; */
     /* margin-left: 50%; */
     /* margin-top: 10rem; */
-    margin-bottom: 4rem;
+    margin-bottom: 11rem;
     border: none;
     border-radius: 15px;
     /* display: flex;
@@ -390,4 +390,9 @@ form label input::placeholder{
     margin-left: 1rem;
     margin-right: 2rem;
     font-family: 'Open Sans', sans-serif;
+}
+
+.ocultar {
+    display: none;
+    opacity: 0%;
 }
