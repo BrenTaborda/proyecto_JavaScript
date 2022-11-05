@@ -3,18 +3,10 @@ btnSwitch.addEventListener('click', () =>{
   document.body.classList.toggle('dark');
   btnSwitch.classList.toggle('active');
 
-  if(document.body.classList.contains('dark')){
-    localStorage.setItem('dark-mode', 'true')
-  } else {
-    localStorage.setItem('dark-mode', 'false')
-  }
+  document.body.classList.contains('dark') ? localStorage.setItem('dark-mode', 'true') : localStorage.setItem('dark-mode', 'false')
 });
 
-if(localStorage.getItem('dark-mode') === 'true'){
-  document.body.classList.add('dark');
-} else {
-  document.body.classList.remove('dark');
-}
+localStorage.getItem('dark-mode') === 'true' ? document.body.classList.add('dark') : document.body.classList.remove('dark');
 
 let boton = document.querySelector('#botonInicio') ;
 let divPrincipal = document.querySelector('#inicioApp');
@@ -40,36 +32,26 @@ botonUser.addEventListener('click', (e) =>{
     const dataName ={
       username: username.value
     }
-          // console.log(dataName)
-          // console.log(typeof dataName)
 
     const dataNameEnJSON = JSON.stringify(dataName);
 
-          // console.log(dataNameEnJSON); 
-          // console.log(typeof dataName); 
-          // console.log(typeof dataNameEnJSON);  
-
     localStorage.setItem("dataName", dataNameEnJSON);
     const devolucionNombre = JSON.parse(dataNameEnJSON)
-          // console.log(devolucionNombre)
-          // console.log(devolucionNombre.username)
+
     const nombredeUsuario = devolucionNombre.username
-          // console.log("Hola " + nombredeUsuario)
 
           if(nombredeUsuario === ""){
-            `<div id="mayoriaDeEdad" class="basic">
+          `<div id="mayoriaDeEdad" class="basic">
             <h2>TENES QUE INGRESAR UN NOMBRE</h2>
-
-    <form id="form" class="formUser" action="">
+            <form id="form" class="formUser" action="">
               <h2>¿Cómo te llamás?</h2>
               <label class="labelUser">
                   <i class="fa-solid fa-user"></i>
                   <input placeholder="Ingresá tu nombre" type="text" id="username">
               </label>
               <button class="botonUser" id="botonUser">Guardar nombre</button>
-    </form>
-
-    </div>`;
+            </form>
+          </div>`;
           } else {
             divPrincipal.innerHTML = `<div id="mayoriaDeEdad" class="basic">
             <h2>Hola ${nombredeUsuario}</h2>
@@ -85,7 +67,9 @@ botonUser.addEventListener('click', (e) =>{
             botonNo.addEventListener("click", () => {
               divPrincipal.innerHTML = `
               <h2>Lo siento ${nombredeUsuario},</h2>
-              <h2>todavía no podés beber alcohol</h2>`
+              <h2>todavía no podés beber alcohol.
+              Te dejo un enlace para ver recetas de tragos sin alcohol</h2>
+              <button onclick=" window.open('https://www.thebeertimes.com/recetas-de-cocteles-sin-alcohol-mocktails/','_blank')" class="botoninicio" title="Clickeá aquí" >Clickeá aquí</button>`
             }) ;
           
             let botonSi = document.querySelector('#botonMayorSi')  
@@ -122,7 +106,7 @@ botonUser.addEventListener('click', (e) =>{
                               <img src=${romanceTintoBajo[indiceMontoRomanceT1].foto} alt=${romanceTintoBajo[indiceMontoRomanceT1].vinoRecomendado}">
                               <h1>${romanceTintoBajo[indiceMontoRomanceT1].vinoRecomendado}</h1>
                               <p class="card-text">${romanceTintoBajo[indiceMontoRomanceT1].frase}</p>
-                              <a href="${romanceTintoBajo[indiceMontoRomanceT1].linkCompra}" class="btn btn-primary">Comprar</a>
+                              <a href="${romanceTintoBajo[indiceMontoRomanceT1].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                               </div>`
                             
                             
@@ -140,7 +124,7 @@ botonUser.addEventListener('click', (e) =>{
                             <img src=${romanceTintoMedio[indiceMontoRomanceT2].foto} alt=${romanceTintoMedio[indiceMontoRomanceT2].vinoRecomendado}">
                             <h1>${romanceTintoMedio[indiceMontoRomanceT2].vinoRecomendado}</h1>
                             <p class="card-text">${romanceTintoMedio[indiceMontoRomanceT2].frase}</p>
-                            <a href="${romanceTintoMedio[indiceMontoRomanceT2].linkCompra}" class="btn btn-primary">Comprar</a>
+                            <a href="${romanceTintoMedio[indiceMontoRomanceT2].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                             </div>`
                           }) ;
                           let btnTintoCRRango3 = document.querySelector('#botonRango3RomanceTinto')  
@@ -157,18 +141,16 @@ botonUser.addEventListener('click', (e) =>{
                           <img src=${romanceTintoAlto[indiceMontoRomanceT3].foto} alt=${romanceTintoAlto[indiceMontoRomanceT3].vinoRecomendado}">
                           <h1>${romanceTintoAlto[indiceMontoRomanceT3].vinoRecomendado}</h1>
                           <p class="card-text">${romanceTintoAlto[indiceMontoRomanceT3].frase}</p>
-                          <a href="${romanceTintoAlto[indiceMontoRomanceT3].linkCompra}" class="btn btn-primary">Comprar</a>
+                          <a href="${romanceTintoAlto[indiceMontoRomanceT3].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                           </div>`
           
                         }) ;
           
-                    //guardar
                     sessionStorage.setItem('color','tinto')
-                    //recuperar
                      let recuperoColor = sessionStorage.getItem('color')
           
                     if(recuperoColor === 'tinto'){
-                      Swal.fire("Los vinos tintos maridan bien con carnes rojas")}
+                      Swal.fire("Para una cena realmente especial, tené en cuenta que los vinos tintos maridan bien con carnes rojas")}
                     
                     
                     }) ;
@@ -192,7 +174,7 @@ botonUser.addEventListener('click', (e) =>{
                     <img src=${romanceBlancoBajo[indiceMontoRomanceB1].foto} alt=${romanceBlancoBajo[indiceMontoRomanceB1].vinoRecomendado}">
                     <h1>${romanceBlancoBajo[indiceMontoRomanceB1].vinoRecomendado}</h1>
                     <p class="card-text">${romanceBlancoBajo[indiceMontoRomanceB1].frase}</p>
-                    <a href="${romanceBlancoBajo[indiceMontoRomanceB1].linkCompra}" class="btn btn-primary">Comprar</a>
+                    <a href="${romanceBlancoBajo[indiceMontoRomanceB1].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                     </div>`
                   }) ;
                   
@@ -209,7 +191,7 @@ botonUser.addEventListener('click', (e) =>{
                   <img src=${romanceBlancoMedio[indiceMontoRomanceB2].foto} alt=${romanceBlancoMedio[indiceMontoRomanceB2].vinoRecomendado}">
                   <h1>${romanceBlancoMedio[indiceMontoRomanceB2].vinoRecomendado}</h1>
                   <p class="card-text">${romanceBlancoMedio[indiceMontoRomanceB2].frase}</p>
-                  <a href="${romanceBlancoMedio[indiceMontoRomanceB2].linkCompra}" class="btn btn-primary">Comprar</a>
+                  <a href="${romanceBlancoMedio[indiceMontoRomanceB2].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                   </div>`
                   }) ;
           
@@ -226,20 +208,14 @@ botonUser.addEventListener('click', (e) =>{
                   <img src=${romanceBlancoAlto[indiceMontoRomanceB3].foto} alt=${romanceBlancoAlto[indiceMontoRomanceB3].vinoRecomendado}">
                   <h1>${romanceBlancoAlto[indiceMontoRomanceB3].vinoRecomendado}</h1>
                   <p class="card-text">${romanceBlancoAlto[indiceMontoRomanceB3].frase}</p>
-                  <a href="${romanceBlancoAlto[indiceMontoRomanceB3].linkCompra}" class="btn btn-primary">Comprar</a>
+                  <a href="${romanceBlancoAlto[indiceMontoRomanceB3].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                   </div>`
                   }) ;
                   
                   sessionStorage.setItem('color','blanco')
-                  //recuperar
                    let recupero = sessionStorage.getItem('color')
-                  //  console.log(recupero)  
           
-                   if(recupero === 'blanco'){
-                    Swal.fire("Los vinos blancos maridan bien con pescados. Los mariscos son una buena opción para una cena romántica.")
-                  }
-                    
-                  
+                  recupero === 'blanco' && Swal.fire("Los vinos blancos maridan bien con pescados. Los mariscos son una buena opción para una cena romántica 😉")
                 }) ;
                 
                 }) ;
@@ -270,7 +246,7 @@ botonUser.addEventListener('click', (e) =>{
                               <img src=${juntadaTintoBajo[indiceMontoJuntadaT1].foto} alt=${juntadaTintoBajo[indiceMontoJuntadaT1].vinoRecomendado}">
                               <h1>${juntadaTintoBajo[indiceMontoJuntadaT1].vinoRecomendado}</h1>
                               <p class="card-text">${juntadaTintoBajo[indiceMontoJuntadaT1].frase}</p>
-                              <a href="${juntadaTintoBajo[indiceMontoJuntadaT1].linkCompra}" class="btn btn-primary">Comprar</a>
+                              <a href="${juntadaTintoBajo[indiceMontoJuntadaT1].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                               </div>`
                             
                             
@@ -288,7 +264,7 @@ botonUser.addEventListener('click', (e) =>{
                             <img src=${juntadaTintoMedio[indiceMontoJuntadaT2].foto} alt=${juntadaTintoMedio[indiceMontoJuntadaT2].vinoRecomendado}">
                             <h1>${juntadaTintoMedio[indiceMontoJuntadaT2].vinoRecomendado}</h1>
                             <p class="card-text">${juntadaTintoMedio[indiceMontoJuntadaT2].frase}</p>
-                            <a href="${juntadaTintoMedio[indiceMontoJuntadaT2].linkCompra}" class="btn btn-primary">Comprar</a>
+                            <a href="${juntadaTintoMedio[indiceMontoJuntadaT2].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                             </div>`
                           }) ;
                           let btnTintoJARango3 = document.querySelector('#botonRango3JuntadaTinto')  
@@ -304,7 +280,7 @@ botonUser.addEventListener('click', (e) =>{
                           <img src=${juntadaTintoAlto[indiceMontoJuntadaT3].foto} alt=${juntadaTintoAlto[indiceMontoJuntadaT3].vinoRecomendado}">
                           <h1>${juntadaTintoAlto[indiceMontoJuntadaT3].vinoRecomendado}</h1>
                           <p class="card-text">${juntadaTintoAlto[indiceMontoJuntadaT3].frase}</p>
-                          <a href="${juntadaTintoAlto[indiceMontoJuntadaT3].linkCompra}" class="btn btn-primary">Comprar</a>
+                          <a href="${juntadaTintoAlto[indiceMontoJuntadaT3].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                           </div>`
                         }) ;
           }) ;
@@ -328,7 +304,7 @@ botonUser.addEventListener('click', (e) =>{
                     <img src=${juntadaBlancoBajo[indiceMontoJuntadaB1].foto} alt=${juntadaBlancoBajo[indiceMontoJuntadaB1].vinoRecomendado}">
                     <h1>${juntadaBlancoBajo[indiceMontoJuntadaB1].vinoRecomendado}</h1>
                     <p class="card-text">${juntadaBlancoBajo[indiceMontoJuntadaB1].frase}</p>
-                    <a href="${juntadaBlancoBajo[indiceMontoJuntadaB1].linkCompra}" class="btn btn-primary">Comprar</a>
+                    <a href="${juntadaBlancoBajo[indiceMontoJuntadaB1].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                     </div>`
                   }) ;
                   
@@ -345,7 +321,7 @@ botonUser.addEventListener('click', (e) =>{
                   <img src=${juntadaBlancoMedio[indiceMontoJuntadaB2].foto} alt=${juntadaBlancoMedio[indiceMontoJuntadaB2].vinoRecomendado}">
                   <h1>${juntadaBlancoMedio[indiceMontoJuntadaB2].vinoRecomendado}</h1>
                   <p class="card-text">${juntadaBlancoMedio[indiceMontoJuntadaB2].frase}</p>
-                  <a href="${juntadaBlancoMedio[indiceMontoJuntadaB2].linkCompra}" class="btn btn-primary">Comprar</a>
+                  <a href="${juntadaBlancoMedio[indiceMontoJuntadaB2].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                   </div>`
                   }) ;
           
@@ -362,7 +338,7 @@ botonUser.addEventListener('click', (e) =>{
                   <img src=${juntadaBlancoAlto[indiceMontoJuntadaB3].foto} alt=${juntadaBlancoAlto[indiceMontoJuntadaB3].vinoRecomendado}">
                   <h1>${juntadaBlancoAlto[indiceMontoJuntadaB3].vinoRecomendado}</h1>
                   <p class="card-text">${juntadaBlancoAlto[indiceMontoJuntadaB3].frase}</p>
-                  <a href="${juntadaBlancoAlto[indiceMontoJuntadaB3].linkCompra}" class="btn btn-primary">Comprar</a>
+                  <a href="${juntadaBlancoAlto[indiceMontoJuntadaB3].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                   </div>`
                   }) ;
                   
@@ -376,6 +352,11 @@ botonUser.addEventListener('click', (e) =>{
                   divPrincipal.innerHTML = `<h2>En esta ocasión preferís:</h2>
                   <button id="botonTintoPR" class="botoninicio">Tinto</button>
                   <button id="botonBlancoPR" class="botoninicio">Blanco</button>`
+
+                  sessionStorage.setItem('para','hacerUnRegalo')
+                   let recupero = sessionStorage.getItem('para')
+          
+                  recupero === 'hacerUnRegalo' && Swal.fire("Una botella de vino no es un regalo más; el vino es una bebida con la que se dicen muchas cosas al mismo tiempo. Con estas sugerencias no podés fallar.")
           
                     let btnTintoPR = document.querySelector('#botonTintoPR')  
                     btnTintoPR.addEventListener("click", () => {
@@ -397,7 +378,7 @@ botonUser.addEventListener('click', (e) =>{
                               <img src=${regaloTintoBajo[indiceMontoRegaloT1].foto} alt=${regaloTintoBajo[indiceMontoRegaloT1].vinoRecomendado}">
                               <h1>${regaloTintoBajo[indiceMontoRegaloT1].vinoRecomendado}</h1>
                               <p class="card-text">${regaloTintoBajo[indiceMontoRegaloT1].frase}</p>
-                              <a href="${regaloTintoBajo[indiceMontoRegaloT1].linkCompra}" class="btn btn-primary">Comprar</a>
+                              <a href="${regaloTintoBajo[indiceMontoRegaloT1].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                               </div>`
                             
                             
@@ -415,7 +396,7 @@ botonUser.addEventListener('click', (e) =>{
                             <img src=${regaloTintoMedio[indiceMontoRegaloT2].foto} alt=${regaloTintoMedio[indiceMontoRegaloT2].vinoRecomendado}">
                             <h1>${regaloTintoMedio[indiceMontoRegaloT2].vinoRecomendado}</h1>
                             <p class="card-text">${regaloTintoMedio[indiceMontoRegaloT2].frase}</p>
-                            <a href="${regaloTintoMedio[indiceMontoRegaloT2].linkCompra}" class="btn btn-primary">Comprar</a>
+                            <a href="${regaloTintoMedio[indiceMontoRegaloT2].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                             </div>`
                           }) ;
                           let btnTintoPRRango3 = document.querySelector('#botonRango3RegaloTinto')  
@@ -431,7 +412,7 @@ botonUser.addEventListener('click', (e) =>{
                           <img src=${regaloTintoAlto[indiceMontoRegaloT3].foto} alt=${regaloTintoAlto[indiceMontoRegaloT3].vinoRecomendado}">
                           <h1>${regaloTintoAlto[indiceMontoRegaloT3].vinoRecomendado}</h1>
                           <p class="card-text">${regaloTintoAlto[indiceMontoRegaloT3].frase}</p>
-                          <a href="${regaloTintoAlto[indiceMontoRegaloT3].linkCompra}" class="btn btn-primary">Comprar</a>
+                          <a href="${regaloTintoAlto[indiceMontoRegaloT3].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                           </div>`
                         }) ;
           }) ;
@@ -455,7 +436,7 @@ botonUser.addEventListener('click', (e) =>{
                     <img src=${regaloBlancoBajo[indiceMontoRegaloB1].foto} alt=${regaloBlancoBajo[indiceMontoRegaloB1].vinoRecomendado}">
                     <h1>${regaloBlancoBajo[indiceMontoRegaloB1].vinoRecomendado}</h1>
                     <p class="card-text">${regaloBlancoBajo[indiceMontoRegaloB1].frase}</p>
-                    <a href="${regaloBlancoBajo[indiceMontoRegaloB1].linkCompra}" class="btn btn-primary">Comprar</a>
+                    <a href="${regaloBlancoBajo[indiceMontoRegaloB1].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                     </div>`
                   }) ;
                   
@@ -472,7 +453,7 @@ botonUser.addEventListener('click', (e) =>{
                   <img src=${regaloBlancoMedio[indiceMontoRegaloB2].foto} alt=${regaloBlancoMedio[indiceMontoRegaloB2].vinoRecomendado}">
                   <h1>${regaloBlancoMedio[indiceMontoRegaloB2].vinoRecomendado}</h1>
                   <p class="card-text">${regaloBlancoMedio[indiceMontoRegaloB2].frase}</p>
-                  <a href="${regaloBlancoMedio[indiceMontoRegaloB2].linkCompra}" class="btn btn-primary">Comprar</a>
+                  <a href="${regaloBlancoMedio[indiceMontoRegaloB2].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                   </div>`
                   }) ;
           
@@ -489,7 +470,7 @@ botonUser.addEventListener('click', (e) =>{
                   <img src=${regaloBlancoAlto[indiceMontoRegaloB3].foto} alt=${regaloBlancoAlto[indiceMontoRegaloB3].vinoRecomendado}">
                   <h1>${regaloBlancoAlto[indiceMontoRegaloB3].vinoRecomendado}</h1>
                   <p class="card-text">${regaloBlancoAlto[indiceMontoRegaloB3].frase}</p>
-                  <a href="${regaloBlancoAlto[indiceMontoRegaloB3].linkCompra}" class="btn btn-primary">Comprar</a>
+                  <a href="${regaloBlancoAlto[indiceMontoRegaloB3].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                   </div>`
                   }) ;
                   
