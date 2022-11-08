@@ -33,7 +33,7 @@ btnEnviarClima.addEventListener('click', () => {
                     ingresoClima.className = "ocultar"
                 }
             })
-            .catch(err => Swal.fire(err))
+            .catch(err => Swal.fire("Ingresá una ciudad para mejorar la recomendación.  " + err))
     } else {
         Swal.fire("Ingresá una ciudad para mejorar la recomendación")
     }
