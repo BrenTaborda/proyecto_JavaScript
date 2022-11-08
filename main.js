@@ -99,13 +99,13 @@ botonUser.addEventListener('click', (e) =>{
                                   el.ocasion === "romance" &&
                                   el.monto === "bajo";
                                 });
-                                const indiceMontoRomanceT1 = Math.floor(Math.random()*romanceTintoBajo.length)
+                                const indice = Math.floor(Math.random()*romanceTintoBajo.length)
                             
                               divPrincipal.innerHTML = `<div class="card">
-                              <img src=${romanceTintoBajo[indiceMontoRomanceT1].foto} alt=${romanceTintoBajo[indiceMontoRomanceT1].vinoRecomendado}">
-                              <h1>${romanceTintoBajo[indiceMontoRomanceT1].vinoRecomendado}</h1>
-                              <p class="card-text">${romanceTintoBajo[indiceMontoRomanceT1].frase}</p>
-                              <a href="${romanceTintoBajo[indiceMontoRomanceT1].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
+                              <img src=${romanceTintoBajo[indice].foto} alt=${romanceTintoBajo[indice].vinoRecomendado}">
+                              <h1>${romanceTintoBajo[indice].vinoRecomendado}</h1>
+                              <p class="card-text">${romanceTintoBajo[indice].frase}</p>
+                              <a href="${romanceTintoBajo[indice].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                               </div>`
                             
                             
@@ -117,13 +117,13 @@ botonUser.addEventListener('click', (e) =>{
                                 el.ocasion === "romance" &&
                                 el.monto === "medio";
                               });
-                              const indiceMontoRomanceT2 = Math.floor(Math.random()*romanceTintoMedio.length)
+                              const indice = Math.floor(Math.random()*romanceTintoMedio.length)
                           
                             divPrincipal.innerHTML = `<div class="card">
-                            <img src=${romanceTintoMedio[indiceMontoRomanceT2].foto} alt=${romanceTintoMedio[indiceMontoRomanceT2].vinoRecomendado}">
-                            <h1>${romanceTintoMedio[indiceMontoRomanceT2].vinoRecomendado}</h1>
-                            <p class="card-text">${romanceTintoMedio[indiceMontoRomanceT2].frase}</p>
-                            <a href="${romanceTintoMedio[indiceMontoRomanceT2].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
+                            <img src=${romanceTintoMedio[indice].foto} alt=${romanceTintoMedio[indice].vinoRecomendado}">
+                            <h1>${romanceTintoMedio[indice].vinoRecomendado}</h1>
+                            <p class="card-text">${romanceTintoMedio[indice].frase}</p>
+                            <a href="${romanceTintoMedio[indice].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                             </div>`
                           }) ;
                           let btnTintoCRRango3 = document.querySelector('#botonRango3RomanceTinto')  
@@ -133,14 +133,14 @@ botonUser.addEventListener('click', (e) =>{
                               el.ocasion === "romance" &&
                               el.monto === "alto";
                             });
-                            const indiceMontoRomanceT3 = Math.floor(Math.random()*romanceTintoAlto.length);
+                            const indice = Math.floor(Math.random()*romanceTintoAlto.length);
                         
                           divPrincipal.innerHTML = `<h2>${nombredeUsuario}, con este vino, la cena es un éxito asegurado😉</h2>
                           <div class="card">
-                          <img src=${romanceTintoAlto[indiceMontoRomanceT3].foto} alt=${romanceTintoAlto[indiceMontoRomanceT3].vinoRecomendado}">
-                          <h1>${romanceTintoAlto[indiceMontoRomanceT3].vinoRecomendado}</h1>
-                          <p class="card-text">${romanceTintoAlto[indiceMontoRomanceT3].frase}</p>
-                          <a href="${romanceTintoAlto[indiceMontoRomanceT3].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
+                          <img src=${romanceTintoAlto[indice].foto} alt=${romanceTintoAlto[indice].vinoRecomendado}">
+                          <h1>${romanceTintoAlto[indice].vinoRecomendado}</h1>
+                          <p class="card-text">${romanceTintoAlto[indice].frase}</p>
+                          <a href="${romanceTintoAlto[indice].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                           </div>`
           
                         }) ;
@@ -167,13 +167,13 @@ botonUser.addEventListener('click', (e) =>{
                         el.ocasion === "romance" &&
                         el.monto === "bajo";
                       });
-                      const indiceMontoRomanceB1 = Math.floor(Math.random()*romanceBlancoBajo.length)
+                      const indice = Math.floor(Math.random()*romanceBlancoBajo.length)
                   
                     divPrincipal.innerHTML = `<div class="card">
-                    <img src=${romanceBlancoBajo[indiceMontoRomanceB1].foto} alt=${romanceBlancoBajo[indiceMontoRomanceB1].vinoRecomendado}">
-                    <h1>${romanceBlancoBajo[indiceMontoRomanceB1].vinoRecomendado}</h1>
-                    <p class="card-text">${romanceBlancoBajo[indiceMontoRomanceB1].frase}</p>
-                    <a href="${romanceBlancoBajo[indiceMontoRomanceB1].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
+                    <img src=${romanceBlancoBajo[indice].foto} alt=${romanceBlancoBajo[indice].vinoRecomendado}">
+                    <h1>${romanceBlancoBajo[indice].vinoRecomendado}</h1>
+                    <p class="card-text">${romanceBlancoBajo[indice].frase}</p>
+                    <a href="${romanceBlancoBajo[indice].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                     </div>`
                   }) ;
                   
@@ -184,13 +184,13 @@ botonUser.addEventListener('click', (e) =>{
                       el.ocasion === "romance" &&
                       el.monto === "medio";
                     });
-                    const indiceMontoRomanceB2 = Math.floor(Math.random()*romanceBlancoMedio.length)
+                    const indice = Math.floor(Math.random()*romanceBlancoMedio.length)
                 
                   divPrincipal.innerHTML = `<div class="card">
-                  <img src=${romanceBlancoMedio[indiceMontoRomanceB2].foto} alt=${romanceBlancoMedio[indiceMontoRomanceB2].vinoRecomendado}">
-                  <h1>${romanceBlancoMedio[indiceMontoRomanceB2].vinoRecomendado}</h1>
-                  <p class="card-text">${romanceBlancoMedio[indiceMontoRomanceB2].frase}</p>
-                  <a href="${romanceBlancoMedio[indiceMontoRomanceB2].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
+                  <img src=${romanceBlancoMedio[indice].foto} alt=${romanceBlancoMedio[indice].vinoRecomendado}">
+                  <h1>${romanceBlancoMedio[indice].vinoRecomendado}</h1>
+                  <p class="card-text">${romanceBlancoMedio[indice].frase}</p>
+                  <a href="${romanceBlancoMedio[indice].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                   </div>`
                   }) ;
           
@@ -201,13 +201,13 @@ botonUser.addEventListener('click', (e) =>{
                       el.ocasion === "romance" &&
                       el.monto === "alto";
                     });
-                    const indiceMontoRomanceB3 = Math.floor(Math.random()*romanceBlancoAlto.length)
+                    const indice = Math.floor(Math.random()*romanceBlancoAlto.length)
                 
                   divPrincipal.innerHTML = `<div class="card">
-                  <img src=${romanceBlancoAlto[indiceMontoRomanceB3].foto} alt=${romanceBlancoAlto[indiceMontoRomanceB3].vinoRecomendado}">
-                  <h1>${romanceBlancoAlto[indiceMontoRomanceB3].vinoRecomendado}</h1>
-                  <p class="card-text">${romanceBlancoAlto[indiceMontoRomanceB3].frase}</p>
-                  <a href="${romanceBlancoAlto[indiceMontoRomanceB3].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
+                  <img src=${romanceBlancoAlto[indice].foto} alt=${romanceBlancoAlto[indice].vinoRecomendado}">
+                  <h1>${romanceBlancoAlto[indice].vinoRecomendado}</h1>
+                  <p class="card-text">${romanceBlancoAlto[indice].frase}</p>
+                  <a href="${romanceBlancoAlto[indice].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                   </div>`
                   }) ;
                   
@@ -239,13 +239,13 @@ botonUser.addEventListener('click', (e) =>{
                                   el.ocasion === "juntada" &&
                                   el.monto === "bajo";
                                 });
-                                const indiceMontoJuntadaT1 = Math.floor(Math.random()*juntadaTintoBajo.length)
+                                const indice = Math.floor(Math.random()*juntadaTintoBajo.length)
                             
                               divPrincipal.innerHTML = `<div class="card">
-                              <img src=${juntadaTintoBajo[indiceMontoJuntadaT1].foto} alt=${juntadaTintoBajo[indiceMontoJuntadaT1].vinoRecomendado}">
-                              <h1>${juntadaTintoBajo[indiceMontoJuntadaT1].vinoRecomendado}</h1>
-                              <p class="card-text">${juntadaTintoBajo[indiceMontoJuntadaT1].frase}</p>
-                              <a href="${juntadaTintoBajo[indiceMontoJuntadaT1].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
+                              <img src=${juntadaTintoBajo[indice].foto} alt=${juntadaTintoBajo[indice].vinoRecomendado}">
+                              <h1>${juntadaTintoBajo[indice].vinoRecomendado}</h1>
+                              <p class="card-text">${juntadaTintoBajo[indice].frase}</p>
+                              <a href="${juntadaTintoBajo[indice].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                               </div>`
                             
                             
@@ -257,13 +257,13 @@ botonUser.addEventListener('click', (e) =>{
                                 el.ocasion === "juntada" &&
                                 el.monto === "medio";
                               });
-                              const indiceMontoJuntadaT2 = Math.floor(Math.random()*juntadaTintoMedio.length)
+                              const indice = Math.floor(Math.random()*juntadaTintoMedio.length)
                           
                             divPrincipal.innerHTML = `<div class="card">
-                            <img src=${juntadaTintoMedio[indiceMontoJuntadaT2].foto} alt=${juntadaTintoMedio[indiceMontoJuntadaT2].vinoRecomendado}">
-                            <h1>${juntadaTintoMedio[indiceMontoJuntadaT2].vinoRecomendado}</h1>
-                            <p class="card-text">${juntadaTintoMedio[indiceMontoJuntadaT2].frase}</p>
-                            <a href="${juntadaTintoMedio[indiceMontoJuntadaT2].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
+                            <img src=${juntadaTintoMedio[indice].foto} alt=${juntadaTintoMedio[indice].vinoRecomendado}">
+                            <h1>${juntadaTintoMedio[indice].vinoRecomendado}</h1>
+                            <p class="card-text">${juntadaTintoMedio[indice].frase}</p>
+                            <a href="${juntadaTintoMedio[indice].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                             </div>`
                           }) ;
                           let btnTintoJARango3 = document.querySelector('#botonRango3JuntadaTinto')  
@@ -273,13 +273,13 @@ botonUser.addEventListener('click', (e) =>{
                               el.ocasion === "juntada" &&
                               el.monto === "alto";
                             });
-                            const indiceMontoJuntadaT3 = Math.floor(Math.random()*juntadaTintoAlto.length)
+                            const indice = Math.floor(Math.random()*juntadaTintoAlto.length)
                         
                           divPrincipal.innerHTML = `<div class="card">
-                          <img src=${juntadaTintoAlto[indiceMontoJuntadaT3].foto} alt=${juntadaTintoAlto[indiceMontoJuntadaT3].vinoRecomendado}">
-                          <h1>${juntadaTintoAlto[indiceMontoJuntadaT3].vinoRecomendado}</h1>
-                          <p class="card-text">${juntadaTintoAlto[indiceMontoJuntadaT3].frase}</p>
-                          <a href="${juntadaTintoAlto[indiceMontoJuntadaT3].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
+                          <img src=${juntadaTintoAlto[indice].foto} alt=${juntadaTintoAlto[indice].vinoRecomendado}">
+                          <h1>${juntadaTintoAlto[indice].vinoRecomendado}</h1>
+                          <p class="card-text">${juntadaTintoAlto[indice].frase}</p>
+                          <a href="${juntadaTintoAlto[indice].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                           </div>`
                         }) ;
           }) ;
@@ -297,13 +297,13 @@ botonUser.addEventListener('click', (e) =>{
                         el.ocasion === "juntada" &&
                         el.monto === "bajo";
                       });
-                      const indiceMontoJuntadaB1 = Math.floor(Math.random()*juntadaBlancoBajo.length)
+                      const indice = Math.floor(Math.random()*juntadaBlancoBajo.length)
                   
                     divPrincipal.innerHTML = `<div class="card">
-                    <img src=${juntadaBlancoBajo[indiceMontoJuntadaB1].foto} alt=${juntadaBlancoBajo[indiceMontoJuntadaB1].vinoRecomendado}">
-                    <h1>${juntadaBlancoBajo[indiceMontoJuntadaB1].vinoRecomendado}</h1>
-                    <p class="card-text">${juntadaBlancoBajo[indiceMontoJuntadaB1].frase}</p>
-                    <a href="${juntadaBlancoBajo[indiceMontoJuntadaB1].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
+                    <img src=${juntadaBlancoBajo[indice].foto} alt=${juntadaBlancoBajo[indice].vinoRecomendado}">
+                    <h1>${juntadaBlancoBajo[indice].vinoRecomendado}</h1>
+                    <p class="card-text">${juntadaBlancoBajo[indice].frase}</p>
+                    <a href="${juntadaBlancoBajo[indice].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                     </div>`
                   }) ;
                   
@@ -314,13 +314,13 @@ botonUser.addEventListener('click', (e) =>{
                       el.ocasion === "juntada" &&
                       el.monto === "medio";
                     });
-                    const indiceMontoJuntadaB2 = Math.floor(Math.random()*juntadaBlancoMedio.length)
+                    const indice = Math.floor(Math.random()*juntadaBlancoMedio.length)
                 
                   divPrincipal.innerHTML = `<div class="card">
-                  <img src=${juntadaBlancoMedio[indiceMontoJuntadaB2].foto} alt=${juntadaBlancoMedio[indiceMontoJuntadaB2].vinoRecomendado}">
-                  <h1>${juntadaBlancoMedio[indiceMontoJuntadaB2].vinoRecomendado}</h1>
-                  <p class="card-text">${juntadaBlancoMedio[indiceMontoJuntadaB2].frase}</p>
-                  <a href="${juntadaBlancoMedio[indiceMontoJuntadaB2].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
+                  <img src=${juntadaBlancoMedio[indice].foto} alt=${juntadaBlancoMedio[indice].vinoRecomendado}">
+                  <h1>${juntadaBlancoMedio[indice].vinoRecomendado}</h1>
+                  <p class="card-text">${juntadaBlancoMedio[indice].frase}</p>
+                  <a href="${juntadaBlancoMedio[indice].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                   </div>`
                   }) ;
           
@@ -331,13 +331,13 @@ botonUser.addEventListener('click', (e) =>{
                       el.ocasion === "juntada" &&
                       el.monto === "alto";
                     });
-                    const indiceMontoJuntadaB3 = Math.floor(Math.random()*juntadaBlancoAlto.length)
+                    const indice = Math.floor(Math.random()*juntadaBlancoAlto.length)
                 
                   divPrincipal.innerHTML = `<div class="card">
-                  <img src=${juntadaBlancoAlto[indiceMontoJuntadaB3].foto} alt=${juntadaBlancoAlto[indiceMontoJuntadaB3].vinoRecomendado}">
-                  <h1>${juntadaBlancoAlto[indiceMontoJuntadaB3].vinoRecomendado}</h1>
-                  <p class="card-text">${juntadaBlancoAlto[indiceMontoJuntadaB3].frase}</p>
-                  <a href="${juntadaBlancoAlto[indiceMontoJuntadaB3].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
+                  <img src=${juntadaBlancoAlto[indice].foto} alt=${juntadaBlancoAlto[indice].vinoRecomendado}">
+                  <h1>${juntadaBlancoAlto[indice].vinoRecomendado}</h1>
+                  <p class="card-text">${juntadaBlancoAlto[indice].frase}</p>
+                  <a href="${juntadaBlancoAlto[indice].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                   </div>`
                   }) ;
                   
@@ -371,13 +371,13 @@ botonUser.addEventListener('click', (e) =>{
                                   el.ocasion === "regalar" &&
                                   el.monto === "bajo";
                                 });
-                                const indiceMontoRegaloT1 = Math.floor(Math.random()*regaloTintoBajo.length)
+                                const indice = Math.floor(Math.random()*regaloTintoBajo.length)
                             
                               divPrincipal.innerHTML = `<div class="card">
-                              <img src=${regaloTintoBajo[indiceMontoRegaloT1].foto} alt=${regaloTintoBajo[indiceMontoRegaloT1].vinoRecomendado}">
-                              <h1>${regaloTintoBajo[indiceMontoRegaloT1].vinoRecomendado}</h1>
-                              <p class="card-text">${regaloTintoBajo[indiceMontoRegaloT1].frase}</p>
-                              <a href="${regaloTintoBajo[indiceMontoRegaloT1].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
+                              <img src=${regaloTintoBajo[indice].foto} alt=${regaloTintoBajo[indice].vinoRecomendado}">
+                              <h1>${regaloTintoBajo[indice].vinoRecomendado}</h1>
+                              <p class="card-text">${regaloTintoBajo[indice].frase}</p>
+                              <a href="${regaloTintoBajo[indice].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                               </div>`
                             
                             
@@ -389,13 +389,13 @@ botonUser.addEventListener('click', (e) =>{
                                 el.ocasion === "regalar" &&
                                 el.monto === "medio";
                               });
-                              const indiceMontoRegaloT2 = Math.floor(Math.random()*regaloTintoMedio.length)
+                              const indice = Math.floor(Math.random()*regaloTintoMedio.length)
                           
                             divPrincipal.innerHTML = `<div class="card">
-                            <img src=${regaloTintoMedio[indiceMontoRegaloT2].foto} alt=${regaloTintoMedio[indiceMontoRegaloT2].vinoRecomendado}">
-                            <h1>${regaloTintoMedio[indiceMontoRegaloT2].vinoRecomendado}</h1>
-                            <p class="card-text">${regaloTintoMedio[indiceMontoRegaloT2].frase}</p>
-                            <a href="${regaloTintoMedio[indiceMontoRegaloT2].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
+                            <img src=${regaloTintoMedio[indice].foto} alt=${regaloTintoMedio[indice].vinoRecomendado}">
+                            <h1>${regaloTintoMedio[indice].vinoRecomendado}</h1>
+                            <p class="card-text">${regaloTintoMedio[indice].frase}</p>
+                            <a href="${regaloTintoMedio[indice].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                             </div>`
                           }) ;
                           let btnTintoPRRango3 = document.querySelector('#botonRango3RegaloTinto')  
@@ -405,13 +405,13 @@ botonUser.addEventListener('click', (e) =>{
                               el.ocasion === "regalar" &&
                               el.monto === "alto";
                             });
-                            const indiceMontoRegaloT3 = Math.floor(Math.random()*regaloTintoAlto.length)
+                            const indice = Math.floor(Math.random()*regaloTintoAlto.length)
                         
                           divPrincipal.innerHTML = `<div class="card">
-                          <img src=${regaloTintoAlto[indiceMontoRegaloT3].foto} alt=${regaloTintoAlto[indiceMontoRegaloT3].vinoRecomendado}">
-                          <h1>${regaloTintoAlto[indiceMontoRegaloT3].vinoRecomendado}</h1>
-                          <p class="card-text">${regaloTintoAlto[indiceMontoRegaloT3].frase}</p>
-                          <a href="${regaloTintoAlto[indiceMontoRegaloT3].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
+                          <img src=${regaloTintoAlto[indice].foto} alt=${regaloTintoAlto[indice].vinoRecomendado}">
+                          <h1>${regaloTintoAlto[indice].vinoRecomendado}</h1>
+                          <p class="card-text">${regaloTintoAlto[indice].frase}</p>
+                          <a href="${regaloTintoAlto[indice].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                           </div>`
                         }) ;
           }) ;
@@ -429,13 +429,13 @@ botonUser.addEventListener('click', (e) =>{
                         el.ocasion === "regalar" &&
                         el.monto === "bajo";
                       });
-                      const indiceMontoRegaloB1 = Math.floor(Math.random()*regaloBlancoBajo.length)
+                      const indice = Math.floor(Math.random()*regaloBlancoBajo.length)
                   
                     divPrincipal.innerHTML = `<div class="card">
-                    <img src=${regaloBlancoBajo[indiceMontoRegaloB1].foto} alt=${regaloBlancoBajo[indiceMontoRegaloB1].vinoRecomendado}">
-                    <h1>${regaloBlancoBajo[indiceMontoRegaloB1].vinoRecomendado}</h1>
-                    <p class="card-text">${regaloBlancoBajo[indiceMontoRegaloB1].frase}</p>
-                    <a href="${regaloBlancoBajo[indiceMontoRegaloB1].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
+                    <img src=${regaloBlancoBajo[indice].foto} alt=${regaloBlancoBajo[indice].vinoRecomendado}">
+                    <h1>${regaloBlancoBajo[indice].vinoRecomendado}</h1>
+                    <p class="card-text">${regaloBlancoBajo[indice].frase}</p>
+                    <a href="${regaloBlancoBajo[indice].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                     </div>`
                   }) ;
                   
@@ -446,13 +446,13 @@ botonUser.addEventListener('click', (e) =>{
                       el.ocasion === "regalar" &&
                       el.monto === "medio";
                     });
-                    const indiceMontoRegaloB2 = Math.floor(Math.random()*regaloBlancoMedio.length)
+                    const indice = Math.floor(Math.random()*regaloBlancoMedio.length)
                 
                   divPrincipal.innerHTML = `<div class="card">
-                  <img src=${regaloBlancoMedio[indiceMontoRegaloB2].foto} alt=${regaloBlancoMedio[indiceMontoRegaloB2].vinoRecomendado}">
-                  <h1>${regaloBlancoMedio[indiceMontoRegaloB2].vinoRecomendado}</h1>
-                  <p class="card-text">${regaloBlancoMedio[indiceMontoRegaloB2].frase}</p>
-                  <a href="${regaloBlancoMedio[indiceMontoRegaloB2].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
+                  <img src=${regaloBlancoMedio[indice].foto} alt=${regaloBlancoMedio[indice].vinoRecomendado}">
+                  <h1>${regaloBlancoMedio[indice].vinoRecomendado}</h1>
+                  <p class="card-text">${regaloBlancoMedio[indice].frase}</p>
+                  <a href="${regaloBlancoMedio[indice].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                   </div>`
                   }) ;
           
@@ -463,13 +463,13 @@ botonUser.addEventListener('click', (e) =>{
                       el.ocasion === "regalar" &&
                       el.monto === "alto";
                     });
-                    const indiceMontoRegaloB3 = Math.floor(Math.random()*regaloBlancoAlto.length)
+                    const indice = Math.floor(Math.random()*regaloBlancoAlto.length)
                 
                   divPrincipal.innerHTML = `<div class="card">
-                  <img src=${regaloBlancoAlto[indiceMontoRegaloB3].foto} alt=${regaloBlancoAlto[indiceMontoRegaloB3].vinoRecomendado}">
-                  <h1>${regaloBlancoAlto[indiceMontoRegaloB3].vinoRecomendado}</h1>
-                  <p class="card-text">${regaloBlancoAlto[indiceMontoRegaloB3].frase}</p>
-                  <a href="${regaloBlancoAlto[indiceMontoRegaloB3].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
+                  <img src=${regaloBlancoAlto[indice].foto} alt=${regaloBlancoAlto[indice].vinoRecomendado}">
+                  <h1>${regaloBlancoAlto[indice].vinoRecomendado}</h1>
+                  <p class="card-text">${regaloBlancoAlto[indice].frase}</p>
+                  <a href="${regaloBlancoAlto[indice].linkCompra}" class="btn btn-primary" target="_blank">Comprar</a>
                   </div>`
                   }) ;
                   
