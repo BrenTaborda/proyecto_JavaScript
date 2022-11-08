@@ -21,7 +21,6 @@ boton.addEventListener ("click", () => {
               </label>
               <button class="botonUser" id="botonUser">Guardar nombre</button>
     </form>
-
     </div>`
 
 const username = document.getElementById('username')
@@ -485,10 +484,6 @@ botonUser.addEventListener('click', (e) =>{
 
 
 })
-
-
-
-
 
 
 });

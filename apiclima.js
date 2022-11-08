@@ -7,7 +7,6 @@ btnEnviarClima.addEventListener('click', () => {
     ciudad = encodeURIComponent(ciudad)
 
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${key}&units=metric`
-    console.log(url)
 
     if (ciudad != "") {
         fetch(url)
@@ -34,7 +33,7 @@ btnEnviarClima.addEventListener('click', () => {
                     ingresoClima.className = "ocultar"
                 }
             })
-            .catch(err => console.log(err))
+            .catch(err => Swal.fire(err))
     } else {
         Swal.fire("Ingresá una ciudad para mejorar la recomendación")
     }
